@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Částicové složení látek – školní kvíz</title>
+  <title>Prvky v PSP – školní kvíz</title>
   <style>
     :root {
       --bg: #fff7d6;
@@ -35,6 +35,862 @@
       padding: 18px;
     }
 
+    .app {
+      width: min(980px, 100%);
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(8px);
+      border: 2px solid rgba(255, 47, 47, 0.18);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px clamp(18px, 4vw, 34px);
+      background: linear-gradient(135deg, var(--primary), #fff6a3);
+      border-bottom: 3px solid rgba(255, 47, 47, 0.3);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      width: 64px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      display: grid;
+      place-items: center;
+      background: var(--primary);
+      box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.22);
+      flex: 0 0 auto;
+    }
+
+    .logo svg { width: 45px; height: 45px; }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.45rem, 3vw, 2.35rem);
+      line-height: 1;
+    }
+
+    .subtitle {
+      margin: 5px 0 0;
+      color: #5f3200;
+      font-weight: 650;
+      font-size: clamp(0.9rem, 1.8vw, 1rem);
+    }
+
+    .scorebar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .pill {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(201, 20, 20, 0.2);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    main {
+      padding: clamp(18px, 4vw, 36px);
+    }
+
+    .screen { display: none; }
+    .screen.active { display: block; animation: fade 220ms ease; }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .intro, .result-card, .question-card {
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: clamp(20px, 4vw, 34px);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+    }
+
+    .intro h2, .result-card h2 {
+      margin-top: 0;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+    }
+
+    .intro p, .result-card p {
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.55;
+    }
+
+    select, button {
+      font: inherit;
+    }
+
+    select {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 15px;
+      border: 2px solid rgba(255, 47, 47, 0.22);
+      background: #fff;
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 16px;
+      padding: 14px 18px;
+      cursor: pointer;
+      font-weight: 900;
+      transition: transform 130ms ease, filter 130ms ease, box-shadow 130ms ease;
+      box-shadow: 0 10px 18px rgba(201, 20, 20, 0.18);
+    }
+
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.02); }
+    .btn:active { transform: translateY(1px); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: #ffe66d;
+      color: #491b00;
+      box-shadow: none;
+    }
+
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .progress {
+      height: 12px;
+      background: #ffe8e8;
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 0 0 24px;
+    }
+
+    .progress > div {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), #ff9c00);
+      border-radius: inherit;
+      transition: width 260ms ease;
+    }
+
+    .question {
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      margin: 0 0 22px;
+      line-height: 1.25;
+    }
+
+    .answers {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .answer {
+      min-height: 76px;
+      text-align: left;
+      border: 2px solid rgba(0, 0, 0, 0.08);
+      border-radius: 18px;
+      background: #fff;
+      padding: 16px;
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--text);
+      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+    }
+
+    .answer:hover:not(:disabled) {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      background: #fffdf0;
+    }
+
+    .answer:disabled { cursor: not-allowed; }
+    .answer.correct { border-color: var(--ok); background: #e9f8ef; }
+    .answer.wrong { border-color: var(--bad); background: #fdecea; }
+
+    .feedback {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #f7f7f7;
+      display: none;
+      line-height: 1.5;
+      font-weight: 650;
+    }
+
+    .feedback.show { display: block; }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .stat {
+      background: #fff8cf;
+      border: 2px solid rgba(255, 47, 47, 0.18);
+      border-radius: 20px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      color: var(--accent-dark);
+      line-height: 1;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: #6c3a00;
+      font-weight: 900;
+    }
+
+    .review {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .review-item {
+      border-left: 6px solid #ddd;
+      background: #fafafa;
+      border-radius: 14px;
+      padding: 13px 14px;
+      line-height: 1.4;
+    }
+
+    .review-item.good { border-left-color: var(--ok); }
+    .review-item.bad { border-left-color: var(--bad); }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.93rem;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 720px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .scorebar { justify-content: flex-start; }
+      .answers, .settings, .result-grid { grid-template-columns: 1fr; }
+      .answer { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 100 100" role="img">
+            <polygon points="56 5 22 57 48 48 44 95 78 38 52 48" fill="#ff2f2f"></polygon>
+          </svg>
+        </div>
+        <div>
+          <h1>Prvky v PSP</h1>
+          <p class="subtitle">Chemický průmysl v ČR</p>
+        </div>
+      </div>
+      <div class="scorebar" aria-label="Stav hry">
+        <div class="pill">Otázka: <span id="roundNow">0</span>/10</div>
+        <div class="pill">Energie: <span id="lightnings">0</span></div>
+      </div>
+    </header>
+
+    <main>
+      <section id="startScreen" class="screen active">
+        <div class="intro">
+          <h2>Pravidla</h2>
+          <p>Hra náhodně vybere 10 otázek z balíčku. Za každou správnou odpověď získáš 1 energii. Na konci uvidíš počet správných odpovědí, množství energie a přehled kola.</p>
+
+          <button class="btn btn-primary" id="startBtn">Spustit hru</button>
+        </div>
+      </section>
+
+      <section id="gameScreen" class="screen">
+        <div class="question-card">
+          <div class="topline">            <span id="scoreLabel">Správně: 0</span>
+          </div>
+          <div class="progress" aria-label="Průběh kola"><div id="progressBar"></div></div>
+          <h2 id="questionText" class="question"></h2>
+          <div id="answers" class="answers"></div>
+          <div id="feedback" class="feedback"></div>
+          <div class="actions">
+            <button class="btn btn-secondary" id="nextBtn" hidden>Další otázka</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultScreen" class="screen">
+        <div class="result-card">
+          <h2>Výsledek kola</h2>
+          <p id="resultMessage"></p>
+          <div class="result-grid">
+            <div class="stat"><strong id="finalScore">0/10</strong><span>správných odpovědí</span></div>
+            <div class="stat"><strong id="finalLightnings">0</strong><span>získané energie</span></div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-secondary" id="showReviewBtn">Zobrazit přehled</button>
+            <button class="btn btn-primary" id="restartBtn">Hrát znovu</button>
+          </div>
+          <div id="review" class="review" hidden></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+          const questionBank = [
+        {
+    question: "Jak se nazývá událost, při které vznikl prostor, čas a hmota?",
+    answers: ["Velký třesk", "Supernova", "Srážka planet", "Vznik Slunce"],
+    correct: 0,
+    explanation: "Prostor, čas a hmota vznikly při Velkém třesku."
+  },
+  {
+    question: "Kolik chemických prvků je dnes známo?",
+    answers: ["92", "118", "26", "63"],
+    correct: 1,
+    explanation: "V materiálu je uvedeno, že dnes je známo 118 prvků."
+  },
+  {
+    question: "Kolik prvků se přirozeně vyskytuje v přírodě?",
+    answers: ["28", "66", "92", "118"],
+    correct: 2,
+    explanation: "Přirozeně se v přírodě vyskytuje 92 prvků."
+  },
+  {
+    question: "Které prvky vznikly jako první po Velkém třesku?",
+    answers: ["Železo a zlato", "Vodík a helium", "Uhlík a kyslík", "Sodík a chlor"],
+    correct: 1,
+    explanation: "Prvními prvky byly nejlehčí prvky, hlavně vodík a helium."
+  },
+  {
+    question: "Který prvek vznikl ve stopovém množství v rané fázi vesmíru?",
+    answers: ["Lithium", "Zlato", "Uran", "Železo"],
+    correct: 0,
+    explanation: "V raném vesmíru vzniklo také stopové množství lithia."
+  },
+  {
+    question: "Jak vznikly prvky těžší než železo?",
+    answers: ["Pouze v zemské kůře", "Srážkou neutronových hvězd nebo výbuchem supernov", "Rozpadem vody", "Při fotosyntéze"],
+    correct: 1,
+    explanation: "Prvky těžší než železo vznikaly například při srážkách neutronových hvězd nebo výbuších supernov."
+  },
+  {
+    question: "Který vzácný kov zanechal v zemské kůře meteorit Chicxulub?",
+    answers: ["Iridium", "Lithium", "Sodík", "Vápník"],
+    correct: 0,
+    explanation: "Meteorit Chicxulub zanechal v zemské kůře tenkou vrstvu iridia."
+  },
+  {
+    question: "Co znamená řecké slovo atomos?",
+    answers: ["Nabitý", "Nedělitelný", "Kulatý", "Neviditelný"],
+    correct: 1,
+    explanation: "Atomos znamená nedělitelný."
+  },
+  {
+    question: "Který řecký učenec je spojován s představou atomů jako nedělitelných částic?",
+    answers: ["Demokritos", "Mendělejev", "Bohr", "Dalton"],
+    correct: 0,
+    explanation: "Demokritos předpokládal, že látky se skládají z malých nedělitelných částic."
+  },
+  {
+    question: "Kdo vzkřísil Demokritovu myšlenku atomů v novověku?",
+    answers: ["John Dalton", "Joseph Thomson", "Ernest Rutherford", "James Chadwick"],
+    correct: 0,
+    explanation: "John Dalton navázal na myšlenku atomů a vytvořil atomovou teorii."
+  },
+  {
+    question: "Jak si John Dalton představoval atom?",
+    answers: ["Jako kladnou kouli s elektrony", "Jako nedělitelnou kuličku", "Jako oblak pravděpodobnosti", "Jako jádro bez elektronů"],
+    correct: 1,
+    explanation: "Dalton si atom představoval jako malou nedělitelnou kuličku."
+  },
+  {
+    question: "Kdo objevil elektron?",
+    answers: ["Joseph Thomson", "Ernest Rutherford", "Niels Bohr", "Dmitrij Mendělejev"],
+    correct: 0,
+    explanation: "Elektron objevil Joseph Thomson."
+  },
+  {
+    question: "Jak se nazývá Thomsonův model atomu?",
+    answers: ["Planetární model", "Pudingový model", "Kvantový model", "Kuličkový model"],
+    correct: 1,
+    explanation: "Thomsonův model se nazývá pudingový model."
+  },
+  {
+    question: "Jak byly podle Thomsona v atomu rozmístěny elektrony?",
+    answers: ["Jako rozinky v pudinku", "Pouze v jádře", "V jediné přímce", "Mimo atom"],
+    correct: 0,
+    explanation: "Thomson si představoval elektrony jako rozinky rozmístěné v kladně nabité kouli."
+  },
+  {
+    question: "Kdo provedl pokus se zlatou fólií?",
+    answers: ["Rutherford", "Bohr", "Dalton", "Schrödinger"],
+    correct: 0,
+    explanation: "Ernest Rutherford provedl pokus se zlatou fólií."
+  },
+  {
+    question: "Co Rutherfordův pokus dokázal?",
+    answers: ["Že atom nemá jádro", "Že protony jsou soustředěny v jádře", "Že elektrony jsou v jádře", "Že atomy neexistují"],
+    correct: 1,
+    explanation: "Rutherfordův pokus ukázal, že kladně nabité částice jsou soustředěny v jádře atomu."
+  },
+  {
+    question: "Jak se nazývá Rutherfordův model atomu?",
+    answers: ["Planetární model", "Kuličkový model", "Pudingový model", "Model triád"],
+    correct: 0,
+    explanation: "Rutherfordův model je označován jako planetární model."
+  },
+  {
+    question: "Kdo rozpracoval Rutherfordův model o představu elektronů na orbitech?",
+    answers: ["Niels Bohr", "James Chadwick", "Joseph Thomson", "Leukippos"],
+    correct: 0,
+    explanation: "Niels Bohr upravil Rutherfordův model a předpokládal, že elektrony obíhají po orbitech."
+  },
+  {
+    question: "Kdo vytvořil kvantový model atomu?",
+    answers: ["Erwin Schrödinger", "John Dalton", "Dmitrij Mendělejev", "Joseph Thomson"],
+    correct: 0,
+    explanation: "Kvantový model atomu vytvořil Erwin Schrödinger."
+  },
+  {
+    question: "Co popisuje orbital?",
+    answers: ["Přibližnou oblast výskytu elektronu", "Počet protonů v jádře", "Hmotnost celého atomu", "Název prvku"],
+    correct: 0,
+    explanation: "Orbital je přibližná oblast, kde se elektron pravděpodobně vyskytuje."
+  },
+  {
+    question: "Kdo objevil neutron?",
+    answers: ["James Chadwick", "Niels Bohr", "Ernest Rutherford", "John Dalton"],
+    correct: 0,
+    explanation: "Neutron objevil James Chadwick."
+  },
+  {
+    question: "Co je atom?",
+    answers: ["Základní stavební částice hmoty", "Pouze druh iontu", "Vždy záporně nabitá částice", "Směs více prvků"],
+    correct: 0,
+    explanation: "Atom je základní stavební částice hmoty."
+  },
+  {
+    question: "Z čeho se skládá atom?",
+    answers: ["Z jádra a elektronového obalu", "Jen z elektronů", "Jen z neutronů", "Z molekul vody"],
+    correct: 0,
+    explanation: "Atom se skládá z atomového jádra a elektronového obalu."
+  },
+  {
+    question: "Které částice se nacházejí v jádře atomu?",
+    answers: ["Protony a neutrony", "Elektrony a protony", "Elektrony a neutrony", "Pouze elektrony"],
+    correct: 0,
+    explanation: "V jádře atomu jsou protony a neutrony."
+  },
+  {
+    question: "Kde se nacházejí elektrony?",
+    answers: ["V elektronovém obalu", "V jádře atomu", "V neutronu", "V protonovém čísle"],
+    correct: 0,
+    explanation: "Elektrony se pohybují v elektronovém obalu kolem jádra."
+  },
+  {
+    question: "Jaký náboj má proton?",
+    answers: ["Kladný", "Záporný", "Nulový", "Proměnlivý"],
+    correct: 0,
+    explanation: "Proton má kladný náboj."
+  },
+  {
+    question: "Jaký náboj má elektron?",
+    answers: ["Kladný", "Záporný", "Nulový", "Žádný prvek ho nemá"],
+    correct: 1,
+    explanation: "Elektron má záporný náboj."
+  },
+  {
+    question: "Jaký náboj má neutron?",
+    answers: ["Kladný", "Záporný", "Nulový", "Dvojnásobně kladný"],
+    correct: 2,
+    explanation: "Neutron je elektroneutrální částice, má nulový náboj."
+  },
+  {
+    question: "Proč je atom elektroneutrální?",
+    answers: ["Má stejný počet protonů a elektronů", "Nemá žádné protony", "Má více neutronů než elektronů", "Má pouze elektrony"],
+    correct: 0,
+    explanation: "Atom je elektroneutrální, protože počet protonů se rovná počtu elektronů."
+  },
+  {
+    question: "Jak se souhrnně nazývají protony a neutrony?",
+    answers: ["Nukleony", "Elektrony", "Valenční částice", "Izotopy"],
+    correct: 0,
+    explanation: "Protony a neutrony se souhrnně nazývají nukleony."
+  },
+  {
+    question: "Co udává protonové číslo?",
+    answers: ["Počet protonů v jádře", "Počet neutronů v jádře", "Počet vrstev v obalu", "Počet izotopů"],
+    correct: 0,
+    explanation: "Protonové číslo udává počet protonů v jádře atomu."
+  },
+  {
+    question: "Co u neutrálního atomu odpovídá protonovému číslu?",
+    answers: ["Počet elektronů", "Počet neutronů", "Počet period", "Počet sloučenin"],
+    correct: 0,
+    explanation: "U neutrálního atomu se počet protonů rovná počtu elektronů."
+  },
+  {
+    question: "Co udává nukleonové číslo?",
+    answers: ["Počet protonů a neutronů v jádře", "Pouze počet elektronů", "Počet chemických vazeb", "Počet valenčních vrstev"],
+    correct: 0,
+    explanation: "Nukleonové číslo udává počet nukleonů, tedy protonů a neutronů v jádře."
+  },
+  {
+    question: "Jak získáme nukleonové číslo z periodické soustavy?",
+    answers: ["Zaokrouhlením relativní atomové hmotnosti", "Sečtením skupiny a periody", "Odečtením elektronů", "Podle barvy prvku"],
+    correct: 0,
+    explanation: "Nukleonové číslo získáme zaokrouhlením relativní atomové hmotnosti na celé číslo."
+  },
+  {
+    question: "Jak vypočítáme neutronové číslo?",
+    answers: ["N = A - Z", "N = A + Z", "N = Z - A", "N = e- + p+"],
+    correct: 0,
+    explanation: "Neutronové číslo vypočítáme jako rozdíl nukleonového čísla a protonového čísla."
+  },
+  {
+    question: "Jak se správně píše značka chemického prvku?",
+    answers: ["První písmeno velké, druhé malé", "Všechna písmena malá", "Všechna písmena velká", "Pouze číslicí"],
+    correct: 0,
+    explanation: "Značka prvku se píše tak, že první písmeno je velké a druhé případné písmeno malé."
+  },
+  {
+    question: "Který prvek má protonové číslo 3?",
+    answers: ["Lithium", "Beryllium", "Vodík", "Uhlík"],
+    correct: 0,
+    explanation: "Lithium má protonové číslo 3."
+  },
+  {
+    question: "Kolik elektronů může mít maximálně první elektronová vrstva K?",
+    answers: ["2", "8", "18", "32"],
+    correct: 0,
+    explanation: "První vrstva K může obsahovat maximálně 2 elektrony."
+  },
+  {
+    question: "Kolik elektronů může mít maximálně druhá vrstva L?",
+    answers: ["2", "8", "18", "1"],
+    correct: 1,
+    explanation: "Druhá vrstva L může obsahovat maximálně 8 elektronů."
+  },
+  {
+    question: "Co udává číslo periody v periodické soustavě?",
+    answers: ["Počet elektronových vrstev", "Počet neutronů", "Počet protonů vždy v jádře", "Počet izotopů"],
+    correct: 0,
+    explanation: "Číslo periody udává počet vrstev v elektronovém obalu."
+  },
+  {
+    question: "Jak se nazývají elektrony v nejvzdálenější vrstvě od jádra?",
+    answers: ["Valenční elektrony", "Nukleony", "Neutrony", "Protony"],
+    correct: 0,
+    explanation: "Elektrony v nejvzdálenější vrstvě se nazývají valenční elektrony."
+  },
+  {
+    question: "Co jsou izotopy?",
+    answers: ["Atomy téhož prvku lišící se počtem neutronů", "Atomy různých prvků se stejným názvem", "Ionty se záporným nábojem", "Elektrony na valenční vrstvě"],
+    correct: 0,
+    explanation: "Izotopy jsou atomy téhož prvku, které se liší počtem neutronů v jádře."
+  },
+  {
+    question: "Jak se nazývají izotopy vodíku?",
+    answers: ["Protium, deuterium, tritium", "Bronz, mosaz, pájka", "Kation, anion, atom", "Sodík, chlor, argon"],
+    correct: 0,
+    explanation: "Materiál uvádí izotopy vodíku protium, deuterium a tritium."
+  },
+  {
+    question: "Kdo je autorem periodického zákona?",
+    answers: ["Dmitrij Ivanovič Mendělejev", "Joseph Thomson", "John Dalton", "Erwin Schrödinger"],
+    correct: 0,
+    explanation: "Autorem periodického zákona je Dmitrij Ivanovič Mendělejev."
+  },
+  {
+    question: "Ve kterém roce Mendělejev sestavil periodickou tabulku?",
+    answers: ["1869", "1808", "1913", "1932"],
+    correct: 0,
+    explanation: "Mendělejev přišel s periodickou tabulkou v roce 1869."
+  },
+  {
+    question: "Podle čeho Mendělejev původně seřadil prvky?",
+    answers: ["Podle atomových hmotností", "Podle barvy", "Podle skupenství", "Podle velikosti atomu na obrázku"],
+    correct: 0,
+    explanation: "Mendělejev seřadil prvky podle jejich atomových hmotností."
+  },
+  {
+    question: "Co Mendělejev zjistil o vlastnostech prvků?",
+    answers: ["Pravidelně se opakují", "Jsou vždy stejné", "Nemají žádný řád", "Závisí pouze na barvě"],
+    correct: 0,
+    explanation: "Mendělejev zjistil, že vlastnosti prvků se pravidelně neboli periodicky opakují."
+  },
+  {
+    question: "Které prvky Mendělejev předpověděl jako dosud neobjevené?",
+    answers: ["Eka-aluminium, eka-silicium a eka-bor", "Vodík, helium a lithium", "Zlato, stříbro a měď", "Uran, neptunium a plutonium"],
+    correct: 0,
+    explanation: "Mendělejev předpověděl prvky eka-aluminium, eka-silicium a eka-bor."
+  },
+  {
+    question: "Jak se jmenuje radioaktivní uměle připravený prvek pojmenovaný po Mendělejevovi?",
+    answers: ["Mendelevium", "Einsteinium", "Rutherfordium", "Bohrium"],
+    correct: 0,
+    explanation: "Po Mendělejevovi je pojmenován prvek mendelevium."
+  },
+  {
+    question: "Co je ion?",
+    answers: ["Elektricky nabitá částice", "Neutrální částice", "Částice v jádře atomu", "Jiný název pro neutron"],
+    correct: 0,
+    explanation: "Iont je elektricky nabitá částice."
+  },
+  {
+    question: "Jak vzniká kation?",
+    answers: ["Ztrátou elektronů", "Přijetím elektronů", "Přijetím neutronů", "Ztrátou protonů"],
+    correct: 0,
+    explanation: "Kation vzniká ztrátou jednoho nebo více elektronů."
+  },
+  {
+    question: "Jaký náboj má kation?",
+    answers: ["Kladný", "Záporný", "Nulový", "Vždy dvojitě záporný"],
+    correct: 0,
+    explanation: "Kation má kladný náboj, protože má více protonů než elektronů."
+  },
+  {
+    question: "Jak vzniká anion?",
+    answers: ["Přijetím elektronů", "Ztrátou elektronů", "Ztrátou neutronů", "Rozpadem jádra"],
+    correct: 0,
+    explanation: "Anion vzniká přijetím jednoho nebo více elektronů."
+  },
+  {
+    question: "Jaký náboj má anion?",
+    answers: ["Záporný", "Kladný", "Nulový", "Vždy kladný"],
+    correct: 0,
+    explanation: "Anion má záporný náboj, protože má více elektronů než protonů."
+  },
+  {
+    question: "Jak zapíšeme atom kyslíku, který přijal dva elektrony?",
+    answers: ["O2-", "O2+", "O0", "O+"],
+    correct: 0,
+    explanation: "Atom kyslíku, který přijal dva elektrony, se zapíše jako O2-."
+  },
+  {
+    question: "Co se stane s oxidačním číslem, když částice přijímá elektrony?",
+    answers: ["Snižuje se", "Zvyšuje se", "Nemění se", "Vždy se stane nulovým"],
+    correct: 0,
+    explanation: "Když částice přijímá elektrony, její oxidační číslo se snižuje."
+  }
+          ];
+
+          const state = {
+            round: [],
+            current: 0,
+            score: 0,
+            lightnings: 0,
+            answered: false,
+            history: []
+          };
+
+          const $ = (id) => document.getElementById(id);
+
+          const screens = {
+            start: $("startScreen"),
+            game: $("gameScreen"),
+            result: $("resultScreen")
+          };
+
+          function showScreen(name) {
+            Object.values(screens).forEach(screen => screen.classList.remove("active"));
+            screens[name].classList.add("active");
+          }
+
+          function shuffle(array) {
+            return [...array].sort(() => Math.random() - 0.5);
+          }
+
+          function startGame() {
+            const available = questionBank;
+            const count = 10;
+
+            state.round = shuffle(available).slice(0, Math.min(count, available.length));
+            state.current = 0;
+            state.score = 0;
+            state.lightnings = 0;
+            state.answered = false;
+            state.history = [];
+
+            updateHeader();
+            showScreen("game");
+            renderQuestion();
+          }
+
+          function updateHeader() {
+            $("roundNow").textContent = Math.min(state.current + 1, state.round.length || 0);
+            $("lightnings").textContent = state.lightnings;
+            $("scoreLabel").textContent = `Správně: ${state.score}`;
+            const progress = state.round.length ? (state.current / state.round.length) * 100 : 0;
+            $("progressBar").style.width = `${progress}%`;
+          }
+
+          function renderQuestion() {
+            const q = state.round[state.current];
+            state.answered = false;      $("questionText").textContent = q.question;
+            $("feedback").className = "feedback";
+            $("feedback").textContent = "";
+            $("nextBtn").hidden = true;
+            $("answers").innerHTML = "";
+            updateHeader();
+
+            const mappedAnswers = q.answers.map((text, originalIndex) => ({ text, originalIndex }));
+            shuffle(mappedAnswers).forEach((answer, visibleIndex) => {
+              const button = document.createElement("button");
+              button.className = "answer";
+              button.type = "button";
+              button.innerHTML = `<span aria-hidden="true">${String.fromCharCode(65 + visibleIndex)}.</span> ${answer.text}`;
+              button.addEventListener("click", () => chooseAnswer(button, answer.originalIndex));
+              $("answers").appendChild(button);
+            });
+          }
+
+          function chooseAnswer(button, selectedIndex) {
+            if (state.answered) return;
+            state.answered = true;
+
+            const q = state.round[state.current];
+            const isCorrect = selectedIndex === q.correct;
+            const buttons = [...document.querySelectorAll(".answer")];
+
+            buttons.forEach(btn => {
+              btn.disabled = true;
+              const text = btn.textContent.replace(/^[A-D]\.\s*/, "").trim();
+              const originalIndex = q.answers.indexOf(text);
+              if (originalIndex === q.correct) btn.classList.add("correct");
+            });
+
+            if (isCorrect) {
+              state.score += 1;
+              state.lightnings += 1;
+              button.classList.add("correct");
+              $("feedback").innerHTML = `✅ Správně! Získáváš energii.<br><span class="small">${q.explanation}</span>`;
+            } else {
+              button.classList.add("wrong");
+              $("feedback").innerHTML = `❌ To není správně. Správná odpověď: <strong>${q.answers[q.correct]}</strong>.<br><span class="small">${q.explanation}</span>`;
+            }
+
+            state.history.push({
+              question: q.question,
+              selected: q.answers[selectedIndex],
+              correct: q.answers[q.correct],
+              isCorrect
+            });
+
+            $("feedback").classList.add("show");
+            $("nextBtn").hidden = false;
+            updateHeader();
+          }
+
+          function nextQuestion() {
+            state.current += 1;
+            if (state.current >= state.round.length) {
+              showResults();
+            } else {
+              renderQuestion();
+            }
+          }
+
+          function showResults() {
+            $("roundNow").textContent = state.round.length;
+            $("progressBar").style.width = "100%";
+            showScreen("result");
+
+            const total = state.round.length;
+            const percent = Math.round((state.score / total) * 100);
+            $("finalScore").textContent = `${state.score}/${total}`;
+            $("finalLightnings").textContent = state.lightnings;
+
+            let message = "Dobrá práce!";
+            if (percent === 100) message = "Perfektní výsledek! Máš maximum energie.";
+            else if (percent >= 80) message = "Výborně! Většinu otázek máš správně.";
+            else if (percent >= 50) message = "Slušný výkon. Ještě pár pokusů a bude to skvělé.";
+            else message = "Nevadí, zkus další kolo a nasbírej více energie.";
+
+            $("resultMessage").textContent = message;
+            renderReview();
+          }
+
+          function renderReview() {
+            const review = $("review");
+            review.innerHTML = "";
+            state.history.forEach((item, index) => {
+              const div = document.createElement("div");
+              div.className = `review-item ${item.isCorrect ? "good" : "bad"}`;
+              div.innerHTML = `
+                <strong>${index + 1}. ${item.question}</strong>
+                <div class="small">Tvoje odpověď: ${item.selected}</div>
+                <div class="small">Správně: ${item.correct}</div>
+              `;
+              review.appendChild(div);
+            });
+          }
+
+          $("startBtn").addEventListener("click", startGame);
+          $("nextBtn").addEventListener("click", nextQuestion);
+          $("restartBtn").addEventListener("click", () => {
+            $("review").hidden = true;
+            $("showReviewBtn").textContent = "Zobrazit přehled";
+            showScreen("start");
+            $("roundNow").textContent = "0";
+            $("lightnings").textContent = "0";
+          });
+          $("showReviewBtn").addEventListener("click", () => {
+            const review = $("review");
+            review.hidden = !review.hidden;
+            $("showReviewBtn").textContent = review.hidden ? "Zobrazit přehled" : "Skrýt přehled";
+          });
+
+    });
+  </script>
+</body>
+</html>
     .app {
       width: min(980px, 100%);
       background: rgba(255, 255, 255, 0.86);

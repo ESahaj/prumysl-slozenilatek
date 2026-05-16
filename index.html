@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Svět chemie & bezpečnost – školní kvíz</title>
+  <title>Částicové složení látek – školní kvíz</title>
   <style>
     :root {
       --bg: #fff7d6;
@@ -328,7 +328,7 @@
           </svg>
         </div>
         <div>
-          <h1>Svět chemie & bezpečnost</h1>
+          <h1>Částicové složení látek</h1>
           <p class="subtitle">Chemický průmysl v ČR</p>
         </div>
       </div>
@@ -382,408 +382,343 @@
 
   <script>
     const questionBank = [
-      {
-        question: "Který český chemik získal Nobelovu cenu za objev polarografu?",
-        answers: ["Jaroslav Heyrovský", "Otto Wichterle", "Antonín Holý", "František Šorm"],
-        correct: 0,
-        explanation: "Jaroslav Heyrovský získal Nobelovu cenu za chemii za objev a rozvoj polarografické metody."
-      },
-      {
-        question: "Jak se nazývá skleněná nádoba používaná alchymisty při destilaci?",
-        answers: ["Křivule", "Byreta", "Exsikátor", "Kádinka"],
-        correct: 0,
-        explanation: "Křivule je zahnutá skleněná nádoba, která se dříve používala mimo jiné při destilaci."
-      },
-      {
-        question: "Jaký je správný postup při ředění kyseliny vodou?",
-        answers: ["Kyselina se pomalu vlévá do vody", "Voda se rychle vleje do kyseliny", "Obě kapaliny se slívají současně", "Na pořadí vůbec nezáleží"],
-        correct: 0,
-        explanation: "Platí pravidlo: kyselinu lijeme do vody, nikdy ne vodu do kyseliny."
-      },
-      {
-        question: "Jak lze bezpečně zlikvidovat rozlitou rtuť?",
-        answers: ["Posypat sírou", "Vysát vysavačem", "Spláchnout do odpadu", "Setřít holou rukou"],
-        correct: 0,
-        explanation: "Rtuť je toxická. V laboratoři se postupuje podle bezpečnostních pokynů, často se používá síra a odborný sběr."
-      },
-      {
-        question: "Jak se nazývá směs dvou kyselin, která rozpouští i zlato?",
-        answers: ["Luční voda", "Lučavka královská", "Tvrdá voda", "Vápenná voda"],
-        correct: 1,
-        explanation: "Lučavka královská je směs koncentrované kyseliny chlorovodíkové a dusičné v poměru 3:1."
-      },
-      {
-        question: "Na která dvě japonská města byly v závěru druhé světové války svrženy atomové bomby?",
-        answers: ["Hirošima a Nagasaki", "Tokio a Kjóto", "Ósaka a Sapporo", "Nara a Jokohama"],
-        correct: 0,
-        explanation: "Atomové bomby byly svrženy na Hirošimu a Nagasaki v srpnu 1945."
-      },
-      {
-        question: "K čemu slouží Kemlerův a UN kód?",
-        answers: ["K označování nebezpečných látek při přepravě", "K měření teploty varu", "K výpočtu pH", "K pojmenování chemických sloučenin"],
-        correct: 0,
-        explanation: "Tyto kódy pomáhají identifikovat nebezpečí a konkrétní látku při přepravě."
-      },
-      {
-        question: "Který kov roztaje pouhým držením v ruce?",
-        answers: ["Gallium", "Železo", "Měď", "Hliník"],
-        correct: 0,
-        explanation: "Gallium má teplotu tání přibližně 30 °C, takže může tát v teplé dlani."
-      },
-      {
-        question: "K čemu slouží byreta?",
-        answers: ["K přesnému odměřování objemu při titraci", "K drcení pevných látek", "K ohřívání nad plamenem", "K filtrování suspenze"],
-        correct: 0,
-        explanation: "Byreta umožňuje velmi přesné dávkování kapaliny, například při titraci."
-      },
-      {
-        question: "Jaká hodnota pH odpovídá neutrálnímu roztoku?",
-        answers: ["7", "0", "14", "1"],
-        correct: 0,
-        explanation: "Neutrální roztok má pH přibližně 7."
-      },
-      {
-        question: "Kdo je považován za autora periodické tabulky prvků?",
-        answers: ["Dmitrij Ivanovič Mendělejev", "Albert Einstein", "Marie Curie-Skłodowská", "Isaac Newton"],
-        correct: 0,
-        explanation: "Dmitrij Ivanovič Mendělejev sestavil jednu z prvních periodických tabulek prvků."
-      },
-      {
-        question: "Co uděláš jako první, když se v laboratoři stane nehoda?",
-        answers: ["Okamžitě upozorním učitele", "Budu to tajit", "Začnu to nenápadně uklízet", "Uteču ze třídy"],
-        correct: 0,
-        explanation: "Při nehodě je nejdůležitější ihned informovat učitele nebo odpovědnou osobu."
-      },
-{
-  question: "Co v laboratoři nikdy neděláme s chemikáliemi?",
-  answers: ["Neochutnáváme je", "Popisujeme je", "Pozorujeme je", "Vážíme je"],
-  correct: 0,
-  explanation: "V laboratoři se chemikálie nikdy neochutnávají, protože mohou být zdraví nebezpečné."
-},
-{
-  question: "Co musíš v laboratoři nosit kvůli ochraně očí?",
-  answers: ["Ochranné brýle", "Sluchátka", "Čepici", "Šálu"],
-  correct: 0,
-  explanation: "Ochranné brýle chrání oči před prsknutím chemikálie nebo úlomkem skla."
-},
-{
-  question: "Co máš udělat při jakémkoliv poranění v laboratoři?",
-  answers: ["Ihned ho ohlásit učiteli", "Zatajit ho", "Odejít domů", "Pokračovat v práci"],
-  correct: 0,
-  explanation: "Každé poranění se musí ihned oznámit učiteli nebo odpovědné osobě."
-},
-{
-  question: "Co platí pro dlouhé vlasy při práci v laboratoři?",
-  answers: ["Musí být sepnuté", "Musí být rozpuštěné", "Musí být mokré", "Musí být zakryté papírem"],
-  correct: 0,
-  explanation: "Dlouhé vlasy musí být sepnuté, aby se nezachytily nebo nevznítily."
-},
-{
-  question: "Co nesmíš nikdy nechat bez dozoru?",
-  answers: ["Zapálený kahan", "Zavřenou učebnici", "Prázdnou kádinku", "Sešit s poznámkami"],
-  correct: 0,
-  explanation: "Zapálený kahan představuje riziko požáru, proto nesmí zůstat bez dozoru."
-},
-{
-  question: "Co se dělá po ukončení laboratorní práce?",
-  answers: ["Umyjí se pomůcky, uklidí místo a umyjí ruce", "Pomůcky se nechají na stole", "Chemikálie se vrátí kamkoliv", "Ruce se nemyjí"],
-  correct: 0,
-  explanation: "Po práci je nutné uklidit pracovní místo, očistit pomůcky a umýt si ruce."
-},
-{
-  question: "Jak správně ověřujeme zápach látky?",
-  answers: ["Mávnutím ruky směrem k nosu", "Přímým přičichnutím", "Ochutnáním", "Přiložením oka k látce"],
-  correct: 0,
-  explanation: "Výpary se ověřují z bezpečné vzdálenosti mávnutím ruky, nikdy přímým čicháním."
-},
-{
-  question: "Co se při ředění kyseliny vlévá do čeho?",
-  answers: ["Kyselina do vody", "Voda do kyseliny", "Obě látky současně", "Na pořadí nezáleží"],
-  correct: 0,
-  explanation: "Při ředění se vždy pomalu vlévá kyselina do vody, nikdy naopak."
-},
-{
-  question: "Co se nesmí dělat s použitými chemikáliemi?",
-  answers: ["Vracet je zpět do zásobních lahví", "Likvidovat podle pokynů", "Označit je", "Odevzdat je učiteli"],
-  correct: 0,
-  explanation: "Použité chemikálie se nevracejí do zásobních lahví, aby nedošlo ke znečištění obsahu."
-},
-{
-  question: "Co musí být správně označeno na nádobách s chemikáliemi?",
-  answers: ["Štítky", "Víčka barvou podle nálady", "Cena látky", "Jméno posledního žáka"],
-  correct: 0,
-  explanation: "Štítky zabraňují záměně chemikálií a informují o jejich nebezpečnosti."
-},
-{
-  question: "Čím se zabývá chemie?",
-  answers: ["Látkami, jejich složením, vlastnostmi a přeměnami", "Pouze hvězdami", "Pouze výpočty rychlosti", "Pouze stavbou mostů"],
-  correct: 0,
-  explanation: "Chemie zkoumá chemické látky, jejich vlastnosti, složení a chemické reakce."
-},
-{
-  question: "Jak se nazývají přeměny, při kterých z původních látek vznikají látky nové?",
-  answers: ["Chemické reakce", "Fyzikální jednotky", "Mechanické pohyby", "Optické klamy"],
-  correct: 0,
-  explanation: "Při chemických reakcích se původní látky mění na látky nové."
-},
-{
-  question: "Který výrobek patří mezi produkty chemického průmyslu?",
-  answers: ["Šampon", "Kamenný oblouk v přírodě", "Dřevěný pařez", "Sluneční záření"],
-  correct: 0,
-  explanation: "Mycí prostředky a kosmetika, například šampony, jsou produkty chemického průmyslu."
-},
-{
-  question: "Co jsou antibiotika?",
-  answers: ["Léky proti bakteriálním infekcím", "Látky proti plevelům", "Barviva do plastů", "Ochranné pomůcky"],
-  correct: 0,
-  explanation: "Antibiotika se používají k potlačení infekcí bakteriálního původu."
-},
-{
-  question: "Co jsou antipyretika?",
-  answers: ["Léky snižující horečku", "Látky hubící hmyz", "Pomůcky k destilaci", "Plyny pod tlakem"],
-  correct: 0,
-  explanation: "Antipyretika jsou léčiva, která snižují zvýšenou tělesnou teplotu."
-},
-{
-  question: "Co jsou herbicidy?",
-  answers: ["Přípravky proti nežádoucím rostlinám", "Přípravky proti horečce", "Látky na výrobu skla", "Nádoby k titraci"],
-  correct: 0,
-  explanation: "Herbicidy se používají k likvidaci nežádoucích rostlin, například plevelů."
-},
-{
-  question: "Co jsou insekticidy?",
-  answers: ["Přípravky k hubení hmyzu", "Léky proti bolesti", "Přípravky proti plísním", "Skleněné laboratorní nádoby"],
-  correct: 0,
-  explanation: "Insekticidy slouží k hubení hmyzu."
-},
-{
-  question: "Co jsou fungicidy?",
-  answers: ["Přípravky proti houbám a plísním", "Přípravky proti hmyzu", "Léky proti horečce", "Kovy s nízkou teplotou tání"],
-  correct: 0,
-  explanation: "Fungicidy se používají proti houbám a plísním."
-},
-{
-  question: "Co jsou aditiva v potravinářství?",
-  answers: ["Přídatné látky upravující vlastnosti potravin", "Výhradně jedovaté plyny", "Laboratorní sklo", "Přírodní horniny"],
-  correct: 0,
-  explanation: "Aditiva jsou přídatné látky používané ke zlepšení nebo úpravě vlastností potravin."
-},
-{
-  question: "Co označují H-věty na štítku chemikálie?",
-  answers: ["Nebezpečnost látky nebo směsi", "Návod k domácímu vaření", "Cenu výrobku", "Barvu obalu"],
-  correct: 0,
-  explanation: "H-věty jsou věty o nebezpečnosti chemických látek a směsí."
-},
-{
-  question: "Co označují P-věty na štítku chemikálie?",
-  answers: ["Pokyny pro bezpečné zacházení", "Pouze chemický vzorec", "Název výrobce", "Datum narození chemika"],
-  correct: 0,
-  explanation: "P-věty dávají pokyny pro bezpečné zacházení s chemickými látkami a směsmi."
-},
-{
-  question: "Co znamená piktogram s lebkou a zkříženými hnáty?",
-  answers: ["Toxická látka", "Oxidující látka", "Plyn pod tlakem", "Dráždivá látka"],
-  correct: 0,
-  explanation: "Lebka se zkříženými hnáty označuje toxické neboli jedovaté látky."
-},
-{
-  question: "Co znamená piktogram s plamenem?",
-  answers: ["Hořlavá látka", "Látka pod tlakem", "Látka nebezpečná pro životní prostředí", "Radioaktivní látka"],
-  correct: 0,
-  explanation: "Piktogram s plamenem upozorňuje na hořlavé látky."
-},
-{
-  question: "Co znamená piktogram s vykřičníkem?",
-  answers: ["Dráždivá nebo zdraví škodlivá látka", "Výbušnina", "Tlaková láhev", "Biologická látka"],
-  correct: 0,
-  explanation: "Vykřičník označuje například dráždivé látky nebo látky škodlivé pro zdraví."
-},
-{
-  question: "Co znamená piktogram s mrtvou rybou a stromem?",
-  answers: ["Nebezpečí pro životní prostředí", "Látka vhodná k pití", "Látka bez rizika", "Ochranná pomůcka"],
-  correct: 0,
-  explanation: "Tento piktogram upozorňuje na látky nebezpečné pro životní prostředí."
-},
-{
-  question: "Co znamená neutralizace?",
-  answers: ["Reakce kyseliny s hydroxidem za vzniku soli a vody", "Rozpouštění cukru ve vodě", "Zahřívání kovu", "Míchání dvou plynů bez reakce"],
-  correct: 0,
-  explanation: "Neutralizace je reakce kyseliny se zásadou, při které vzniká sůl a voda."
-},
-{
-  question: "Co uděláš při polití kyselinou nebo hydroxidem?",
-  answers: ["Dlouze oplachuješ vodou a vyhledáš pomoc", "Neutralizuješ to jinou chemikálií", "Zakryješ místo bez oplachu", "Neuděláš nic"],
-  correct: 0,
-  explanation: "Postižené místo se dlouze oplachuje proudem vody. Neutralizace na kůži by mohla poleptání zhoršit."
-},
-{
-  question: "K čemu slouží Kemlerův kód při přepravě?",
-  answers: ["K označení druhu nebezpečí", "K označení ceny nákladu", "K označení značky auta", "K měření objemu cisterny"],
-  correct: 0,
-  explanation: "Kemlerův kód označuje charakter nebezpečí přepravované látky."
-},
-{
-  question: "K čemu slouží UN kód při přepravě?",
-  answers: ["K identifikaci konkrétní nebezpečné látky", "K určení rychlosti vozidla", "K měření tlaku v pneumatikách", "K označení řidiče"],
-  correct: 0,
-  explanation: "UN kód slouží k identifikaci konkrétní nebezpečné látky při přepravě."
-},
-{
-  question: "Jak se nazývá předchůdkyně chemie?",
-  answers: ["Alchymie", "Astronomie", "Astrologie", "Kvantová fyzika"],
-  correct: 0,
-  explanation: "Alchymie je považována za předchůdkyni moderní chemie."
-},
-{
-  question: "Co byl kámen mudrců podle představ alchymistů?",
-  answers: ["Látka schopná přeměnit běžné kovy ve zlato", "Nádoba na kyseliny", "Druh laboratorních brýlí", "Přírodní magnet"],
-  correct: 0,
-  explanation: "Alchymisté věřili, že kámen mudrců dokáže přeměnit obyčejné kovy ve zlato."
-},
-{
-  question: "Který filozof spojoval hmotu se čtyřmi živly?",
-  answers: ["Aristoteles", "James Price", "Jaroslav Heyrovský", "Alfred Nobel"],
-  correct: 0,
-  explanation: "Aristoteles vycházel z teorie čtyř živlů: země, ohně, vody a vzduchu."
-},
-{
-  question: "Které čtyři živly uváděla starověká teorie hmoty?",
-  answers: ["Země, oheň, voda, vzduch", "Kov, sklo, plast, dřevo", "Sůl, cukr, voda, olej", "Led, pára, mlha, déšť"],
-  correct: 0,
-  explanation: "Podle starověké teorie se hmota skládala ze čtyř živlů: země, ohně, vody a vzduchu."
-},
-{
-  question: "Kdo je spojován s takzvanou Glauberovou solí?",
-  answers: ["Johann Rudolf Glauber", "Isaac Newton", "Paracelsus", "James Price"],
-  correct: 0,
-  explanation: "Johann Rudolf Glauber je spojován se síranem sodným, známým jako Glauberova sůl."
-},
-{
-  question: "Co je Glauberova sůl?",
-  answers: ["Síran sodný", "Chlorid sodný", "Kyselina sírová", "Oxid uhličitý"],
-  correct: 0,
-  explanation: "Glauberova sůl je síran sodný."
-},
-{
-  question: "Který alchymista prosazoval, že cílem alchymie má být příprava léků?",
-  answers: ["Paracelsus", "James Price", "Aristoteles", "Rabi Löw"],
-  correct: 0,
-  explanation: "Paracelsus zdůrazňoval využití alchymie v medicíně a při přípravě léků."
-},
-{
-  question: "Jaké laboratorní techniky znali už alchymisté?",
-  answers: ["Destilaci, sublimaci a krystalizaci", "Chromatografii", "Elektrolýzu", "Centrifugace"],
-  correct: 0,
-  explanation: "Alchymisté používali techniky jako destilace, sublimace a krystalizace."
-},
-{
-  question: "K čemu slouží kádinka?",
-  answers: ["K práci s kapalinami v laboratoři", "K měření elektrického proudu", "K psaní protokolu", "K ochraně očí"],
-  correct: 0,
-  explanation: "Kádinka je běžná laboratorní nádoba používaná při práci s kapalinami."
-},
-{
-  question: "K čemu slouží třecí miska s tloučkem?",
-  answers: ["K drcení a roztírání pevných látek", "K přesnému měření objemu", "K ochraně rukou", "K chlazení par"],
-  correct: 0,
-  explanation: "Třecí miska s tloučkem se používá k rozdrcení nebo rozetření pevných látek."
-},
-{
-  question: "K čemu slouží odměrný válec?",
-  answers: ["K odměřování objemu kapalin", "K zahřívání plamenem", "K zachytávání plynů pod tlakem", "K filtrování vzduchu"],
-  correct: 0,
-  explanation: "Odměrný válec se používá k měření objemu kapalin."
-},
-{
-  question: "K čemu slouží laboratorní chladič?",
-  answers: ["Ke chlazení par při destilaci", "K zapalování kahanu", "K vážení prášků", "K měření pH"],
-  correct: 0,
-  explanation: "Chladič ochlazuje páry, které pak kondenzují zpět na kapalinu."
-},
-{
-  question: "K čemu slouží Petriho miska?",
-  answers: ["K práci s malým množstvím vzorku nebo kulturami", "K měření přesného objemu kyseliny", "K hoření plynu", "K uchycení zkumavky"],
-  correct: 0,
-  explanation: "Petriho miska je mělká laboratorní miska využívaná například pro vzorky nebo kultury."
-},
-{
-  question: "Která vlastnost látky říká, zda látka vede elektrický proud?",
-  answers: ["Vodivost", "Barva", "Zápach", "Objem"],
-  correct: 0,
-  explanation: "Vodivost vyjadřuje schopnost látky vést elektrický proud."
-},
-{
-  question: "Jak se nazývá změna z pevného skupenství na kapalné?",
-  answers: ["Tání", "Tuhnutí", "Sublimace", "Kondenzace"],
-  correct: 0,
-  explanation: "Přechod z pevného skupenství do kapalného se nazývá tání."
-},
-{
-  question: "Jak se nazývá změna z kapalného skupenství na plynné?",
-  answers: ["Vypařování", "Tuhnutí", "Desublimace", "Krystalizace"],
-  correct: 0,
-  explanation: "Přechod kapaliny na plyn se nazývá vypařování."
-},
-{
-  question: "Jak se nazývá změna z plynného skupenství na kapalné?",
-  answers: ["Kondenzace", "Tání", "Sublimace", "Tuhnutí"],
-  correct: 0,
-  explanation: "Přechod plynu na kapalinu se nazývá kondenzace neboli zkapalnění."
-},
-{
-  question: "Jak se nazývá změna z pevného skupenství přímo na plynné?",
-  answers: ["Sublimace", "Tání", "Kondenzace", "Tuhnutí"],
-  correct: 0,
-  explanation: "Sublimace je přechod z pevného skupenství přímo do plynného."
-},
-{
-  question: "Jak se nazývá změna z plynného skupenství přímo na pevné?",
-  answers: ["Desublimace", "Vypařování", "Tání", "Var"],
-  correct: 0,
-  explanation: "Desublimace je přechod z plynného skupenství přímo do pevného."
-},
-{
-  question: "Které skupenství má stálý tvar i objem?",
-  answers: ["Pevné", "Kapalné", "Plynné", "Plazma vždy při pokojové teplotě"],
-  correct: 0,
-  explanation: "Pevné látky mají stálý tvar i objem."
-},
-{
-  question: "Které skupenství má stálý objem, ale tvar podle nádoby?",
-  answers: ["Kapalné", "Pevné", "Plynné", "Žádné"],
-  correct: 0,
-  explanation: "Kapaliny mají stálý objem, ale tvar zaujímají podle nádoby."
-},
-{
-  question: "Které skupenství nemá stálý tvar ani stálý objem?",
-  answers: ["Plynné", "Pevné", "Kapalné", "Krystalické"],
-  correct: 0,
-  explanation: "Plyny nemají stálý tvar ani objem a vyplňují dostupný prostor."
-},
-{
-  question: "Co je plazma?",
-  answers: ["Skupenství vznikající za velmi vysokých teplot", "Druh laboratorního skla", "Lék proti horečce", "Typ piktogramu"],
-  correct: 0,
-  explanation: "Plazma vzniká za velmi vysokých teplot a vyskytuje se například v ohni, blescích nebo polární záři."
-},
-{
-  question: "Jaký fyzikální děj probíhá při tání ledu?",
-  answers: ["Mění se skupenství, ale ne chemické složení", "Vzniká nová chemická látka", "Vzniká kov", "Probíhá neutralizace"],
-  correct: 0,
-  explanation: "Tání ledu je fyzikální děj, protože se mění pouze skupenství vody."
-},
-{
-  question: "Který z uvedených dějů je chemický?",
-  answers: ["Rezavění železa", "Tání ledu", "Vaření vody", "Rozdrcení křídy"],
-  correct: 0,
-  explanation: "Rezavění železa je chemický děj, protože vznikají nové látky."
-},
-{
-  question: "Který z uvedených dějů je fyzikální?",
-  answers: ["Filtrace odpadní vody", "Hoření síry", "Spalování benzinu", "Trávení potravy"],
-  correct: 0,
-  explanation: "Filtrace je fyzikální děj, protože se při ní nemění chemické složení látek."
-}
+      [
+  {
+    question: "Jak se nazývá událost, při které vznikl prostor, čas a hmota?",
+    answers: ["Velký třesk", "Supernova", "Srážka planet", "Vznik Slunce"],
+    correct: 0,
+    explanation: "Prostor, čas a hmota vznikly při Velkém třesku."
+  },
+  {
+    question: "Kolik chemických prvků je dnes známo?",
+    answers: ["92", "118", "26", "63"],
+    correct: 1,
+    explanation: "V materiálu je uvedeno, že dnes je známo 118 prvků."
+  },
+  {
+    question: "Kolik prvků se přirozeně vyskytuje v přírodě?",
+    answers: ["28", "66", "92", "118"],
+    correct: 2,
+    explanation: "Přirozeně se v přírodě vyskytuje 92 prvků."
+  },
+  {
+    question: "Které prvky vznikly jako první po Velkém třesku?",
+    answers: ["Železo a zlato", "Vodík a helium", "Uhlík a kyslík", "Sodík a chlor"],
+    correct: 1,
+    explanation: "Prvními prvky byly nejlehčí prvky, hlavně vodík a helium."
+  },
+  {
+    question: "Který prvek vznikl ve stopovém množství v rané fázi vesmíru?",
+    answers: ["Lithium", "Zlato", "Uran", "Železo"],
+    correct: 0,
+    explanation: "V raném vesmíru vzniklo také stopové množství lithia."
+  },
+  {
+    question: "Jak vznikly prvky těžší než železo?",
+    answers: ["Pouze v zemské kůře", "Srážkou neutronových hvězd nebo výbuchem supernov", "Rozpadem vody", "Při fotosyntéze"],
+    correct: 1,
+    explanation: "Prvky těžší než železo vznikaly například při srážkách neutronových hvězd nebo výbuších supernov."
+  },
+  {
+    question: "Který vzácný kov zanechal v zemské kůře meteorit Chicxulub?",
+    answers: ["Iridium", "Lithium", "Sodík", "Vápník"],
+    correct: 0,
+    explanation: "Meteorit Chicxulub zanechal v zemské kůře tenkou vrstvu iridia."
+  },
+  {
+    question: "Co znamená řecké slovo atomos?",
+    answers: ["Nabitý", "Nedělitelný", "Kulatý", "Neviditelný"],
+    correct: 1,
+    explanation: "Atomos znamená nedělitelný."
+  },
+  {
+    question: "Který řecký učenec je spojován s představou atomů jako nedělitelných částic?",
+    answers: ["Demokritos", "Mendělejev", "Bohr", "Dalton"],
+    correct: 0,
+    explanation: "Demokritos předpokládal, že látky se skládají z malých nedělitelných částic."
+  },
+  {
+    question: "Kdo vzkřísil Demokritovu myšlenku atomů v novověku?",
+    answers: ["John Dalton", "Joseph Thomson", "Ernest Rutherford", "James Chadwick"],
+    correct: 0,
+    explanation: "John Dalton navázal na myšlenku atomů a vytvořil atomovou teorii."
+  },
+  {
+    question: "Jak si John Dalton představoval atom?",
+    answers: ["Jako kladnou kouli s elektrony", "Jako nedělitelnou kuličku", "Jako oblak pravděpodobnosti", "Jako jádro bez elektronů"],
+    correct: 1,
+    explanation: "Dalton si atom představoval jako malou nedělitelnou kuličku."
+  },
+  {
+    question: "Kdo objevil elektron?",
+    answers: ["Joseph Thomson", "Ernest Rutherford", "Niels Bohr", "Dmitrij Mendělejev"],
+    correct: 0,
+    explanation: "Elektron objevil Joseph Thomson."
+  },
+  {
+    question: "Jak se nazývá Thomsonův model atomu?",
+    answers: ["Planetární model", "Pudingový model", "Kvantový model", "Kuličkový model"],
+    correct: 1,
+    explanation: "Thomsonův model se nazývá pudingový model."
+  },
+  {
+    question: "Jak byly podle Thomsona v atomu rozmístěny elektrony?",
+    answers: ["Jako rozinky v pudinku", "Pouze v jádře", "V jediné přímce", "Mimo atom"],
+    correct: 0,
+    explanation: "Thomson si představoval elektrony jako rozinky rozmístěné v kladně nabité kouli."
+  },
+  {
+    question: "Kdo provedl pokus se zlatou fólií?",
+    answers: ["Rutherford", "Bohr", "Dalton", "Schrödinger"],
+    correct: 0,
+    explanation: "Ernest Rutherford provedl pokus se zlatou fólií."
+  },
+  {
+    question: "Co Rutherfordův pokus dokázal?",
+    answers: ["Že atom nemá jádro", "Že protony jsou soustředěny v jádře", "Že elektrony jsou v jádře", "Že atomy neexistují"],
+    correct: 1,
+    explanation: "Rutherfordův pokus ukázal, že kladně nabité částice jsou soustředěny v jádře atomu."
+  },
+  {
+    question: "Jak se nazývá Rutherfordův model atomu?",
+    answers: ["Planetární model", "Kuličkový model", "Pudingový model", "Model triád"],
+    correct: 0,
+    explanation: "Rutherfordův model je označován jako planetární model."
+  },
+  {
+    question: "Kdo rozpracoval Rutherfordův model o představu elektronů na orbitech?",
+    answers: ["Niels Bohr", "James Chadwick", "Joseph Thomson", "Leukippos"],
+    correct: 0,
+    explanation: "Niels Bohr upravil Rutherfordův model a předpokládal, že elektrony obíhají po orbitech."
+  },
+  {
+    question: "Kdo vytvořil kvantový model atomu?",
+    answers: ["Erwin Schrödinger", "John Dalton", "Dmitrij Mendělejev", "Joseph Thomson"],
+    correct: 0,
+    explanation: "Kvantový model atomu vytvořil Erwin Schrödinger."
+  },
+  {
+    question: "Co popisuje orbital?",
+    answers: ["Přibližnou oblast výskytu elektronu", "Počet protonů v jádře", "Hmotnost celého atomu", "Název prvku"],
+    correct: 0,
+    explanation: "Orbital je přibližná oblast, kde se elektron pravděpodobně vyskytuje."
+  },
+  {
+    question: "Kdo objevil neutron?",
+    answers: ["James Chadwick", "Niels Bohr", "Ernest Rutherford", "John Dalton"],
+    correct: 0,
+    explanation: "Neutron objevil James Chadwick."
+  },
+  {
+    question: "Co je atom?",
+    answers: ["Základní stavební částice hmoty", "Pouze druh iontu", "Vždy záporně nabitá částice", "Směs více prvků"],
+    correct: 0,
+    explanation: "Atom je základní stavební částice hmoty."
+  },
+  {
+    question: "Z čeho se skládá atom?",
+    answers: ["Z jádra a elektronového obalu", "Jen z elektronů", "Jen z neutronů", "Z molekul vody"],
+    correct: 0,
+    explanation: "Atom se skládá z atomového jádra a elektronového obalu."
+  },
+  {
+    question: "Které částice se nacházejí v jádře atomu?",
+    answers: ["Protony a neutrony", "Elektrony a protony", "Elektrony a neutrony", "Pouze elektrony"],
+    correct: 0,
+    explanation: "V jádře atomu jsou protony a neutrony."
+  },
+  {
+    question: "Kde se nacházejí elektrony?",
+    answers: ["V elektronovém obalu", "V jádře atomu", "V neutronu", "V protonovém čísle"],
+    correct: 0,
+    explanation: "Elektrony se pohybují v elektronovém obalu kolem jádra."
+  },
+  {
+    question: "Jaký náboj má proton?",
+    answers: ["Kladný", "Záporný", "Nulový", "Proměnlivý"],
+    correct: 0,
+    explanation: "Proton má kladný náboj."
+  },
+  {
+    question: "Jaký náboj má elektron?",
+    answers: ["Kladný", "Záporný", "Nulový", "Žádný prvek ho nemá"],
+    correct: 1,
+    explanation: "Elektron má záporný náboj."
+  },
+  {
+    question: "Jaký náboj má neutron?",
+    answers: ["Kladný", "Záporný", "Nulový", "Dvojnásobně kladný"],
+    correct: 2,
+    explanation: "Neutron je elektroneutrální částice, má nulový náboj."
+  },
+  {
+    question: "Proč je atom elektroneutrální?",
+    answers: ["Má stejný počet protonů a elektronů", "Nemá žádné protony", "Má více neutronů než elektronů", "Má pouze elektrony"],
+    correct: 0,
+    explanation: "Atom je elektroneutrální, protože počet protonů se rovná počtu elektronů."
+  },
+  {
+    question: "Jak se souhrnně nazývají protony a neutrony?",
+    answers: ["Nukleony", "Elektrony", "Valenční částice", "Izotopy"],
+    correct: 0,
+    explanation: "Protony a neutrony se souhrnně nazývají nukleony."
+  },
+  {
+    question: "Co udává protonové číslo?",
+    answers: ["Počet protonů v jádře", "Počet neutronů v jádře", "Počet vrstev v obalu", "Počet izotopů"],
+    correct: 0,
+    explanation: "Protonové číslo udává počet protonů v jádře atomu."
+  },
+  {
+    question: "Co u neutrálního atomu odpovídá protonovému číslu?",
+    answers: ["Počet elektronů", "Počet neutronů", "Počet period", "Počet sloučenin"],
+    correct: 0,
+    explanation: "U neutrálního atomu se počet protonů rovná počtu elektronů."
+  },
+  {
+    question: "Co udává nukleonové číslo?",
+    answers: ["Počet protonů a neutronů v jádře", "Pouze počet elektronů", "Počet chemických vazeb", "Počet valenčních vrstev"],
+    correct: 0,
+    explanation: "Nukleonové číslo udává počet nukleonů, tedy protonů a neutronů v jádře."
+  },
+  {
+    question: "Jak získáme nukleonové číslo z periodické soustavy?",
+    answers: ["Zaokrouhlením relativní atomové hmotnosti", "Sečtením skupiny a periody", "Odečtením elektronů", "Podle barvy prvku"],
+    correct: 0,
+    explanation: "Nukleonové číslo získáme zaokrouhlením relativní atomové hmotnosti na celé číslo."
+  },
+  {
+    question: "Jak vypočítáme neutronové číslo?",
+    answers: ["N = A - Z", "N = A + Z", "N = Z - A", "N = e- + p+"],
+    correct: 0,
+    explanation: "Neutronové číslo vypočítáme jako rozdíl nukleonového čísla a protonového čísla."
+  },
+  {
+    question: "Jak se správně píše značka chemického prvku?",
+    answers: ["První písmeno velké, druhé malé", "Všechna písmena malá", "Všechna písmena velká", "Pouze číslicí"],
+    correct: 0,
+    explanation: "Značka prvku se píše tak, že první písmeno je velké a druhé případné písmeno malé."
+  },
+  {
+    question: "Který prvek má protonové číslo 3?",
+    answers: ["Lithium", "Beryllium", "Vodík", "Uhlík"],
+    correct: 0,
+    explanation: "Lithium má protonové číslo 3."
+  },
+  {
+    question: "Kolik elektronů může mít maximálně první elektronová vrstva K?",
+    answers: ["2", "8", "18", "32"],
+    correct: 0,
+    explanation: "První vrstva K může obsahovat maximálně 2 elektrony."
+  },
+  {
+    question: "Kolik elektronů může mít maximálně druhá vrstva L?",
+    answers: ["2", "8", "18", "1"],
+    correct: 1,
+    explanation: "Druhá vrstva L může obsahovat maximálně 8 elektronů."
+  },
+  {
+    question: "Co udává číslo periody v periodické soustavě?",
+    answers: ["Počet elektronových vrstev", "Počet neutronů", "Počet protonů vždy v jádře", "Počet izotopů"],
+    correct: 0,
+    explanation: "Číslo periody udává počet vrstev v elektronovém obalu."
+  },
+  {
+    question: "Jak se nazývají elektrony v nejvzdálenější vrstvě od jádra?",
+    answers: ["Valenční elektrony", "Nukleony", "Neutrony", "Protony"],
+    correct: 0,
+    explanation: "Elektrony v nejvzdálenější vrstvě se nazývají valenční elektrony."
+  },
+  {
+    question: "Co jsou izotopy?",
+    answers: ["Atomy téhož prvku lišící se počtem neutronů", "Atomy různých prvků se stejným názvem", "Ionty se záporným nábojem", "Elektrony na valenční vrstvě"],
+    correct: 0,
+    explanation: "Izotopy jsou atomy téhož prvku, které se liší počtem neutronů v jádře."
+  },
+  {
+    question: "Jak se nazývají izotopy vodíku?",
+    answers: ["Protium, deuterium, tritium", "Bronz, mosaz, pájka", "Kation, anion, atom", "Sodík, chlor, argon"],
+    correct: 0,
+    explanation: "Materiál uvádí izotopy vodíku protium, deuterium a tritium."
+  },
+  {
+    question: "Kdo je autorem periodického zákona?",
+    answers: ["Dmitrij Ivanovič Mendělejev", "Joseph Thomson", "John Dalton", "Erwin Schrödinger"],
+    correct: 0,
+    explanation: "Autorem periodického zákona je Dmitrij Ivanovič Mendělejev."
+  },
+  {
+    question: "Ve kterém roce Mendělejev sestavil periodickou tabulku?",
+    answers: ["1869", "1808", "1913", "1932"],
+    correct: 0,
+    explanation: "Mendělejev přišel s periodickou tabulkou v roce 1869."
+  },
+  {
+    question: "Podle čeho Mendělejev původně seřadil prvky?",
+    answers: ["Podle atomových hmotností", "Podle barvy", "Podle skupenství", "Podle velikosti atomu na obrázku"],
+    correct: 0,
+    explanation: "Mendělejev seřadil prvky podle jejich atomových hmotností."
+  },
+  {
+    question: "Co Mendělejev zjistil o vlastnostech prvků?",
+    answers: ["Pravidelně se opakují", "Jsou vždy stejné", "Nemají žádný řád", "Závisí pouze na barvě"],
+    correct: 0,
+    explanation: "Mendělejev zjistil, že vlastnosti prvků se pravidelně neboli periodicky opakují."
+  },
+  {
+    question: "Které prvky Mendělejev předpověděl jako dosud neobjevené?",
+    answers: ["Eka-aluminium, eka-silicium a eka-bor", "Vodík, helium a lithium", "Zlato, stříbro a měď", "Uran, neptunium a plutonium"],
+    correct: 0,
+    explanation: "Mendělejev předpověděl prvky eka-aluminium, eka-silicium a eka-bor."
+  },
+  {
+    question: "Jak se jmenuje radioaktivní uměle připravený prvek pojmenovaný po Mendělejevovi?",
+    answers: ["Mendelevium", "Einsteinium", "Rutherfordium", "Bohrium"],
+    correct: 0,
+    explanation: "Po Mendělejevovi je pojmenován prvek mendelevium."
+  },
+  {
+    question: "Co je ion?",
+    answers: ["Elektricky nabitá částice", "Neutrální částice", "Částice v jádře atomu", "Jiný název pro neutron"],
+    correct: 0,
+    explanation: "Iont je elektricky nabitá částice."
+  },
+  {
+    question: "Jak vzniká kation?",
+    answers: ["Ztrátou elektronů", "Přijetím elektronů", "Přijetím neutronů", "Ztrátou protonů"],
+    correct: 0,
+    explanation: "Kation vzniká ztrátou jednoho nebo více elektronů."
+  },
+  {
+    question: "Jaký náboj má kation?",
+    answers: ["Kladný", "Záporný", "Nulový", "Vždy dvojitě záporný"],
+    correct: 0,
+    explanation: "Kation má kladný náboj, protože má více protonů než elektronů."
+  },
+  {
+    question: "Jak vzniká anion?",
+    answers: ["Přijetím elektronů", "Ztrátou elektronů", "Ztrátou neutronů", "Rozpadem jádra"],
+    correct: 0,
+    explanation: "Anion vzniká přijetím jednoho nebo více elektronů."
+  },
+  {
+    question: "Jaký náboj má anion?",
+    answers: ["Záporný", "Kladný", "Nulový", "Vždy kladný"],
+    correct: 0,
+    explanation: "Anion má záporný náboj, protože má více elektronů než protonů."
+  },
+  {
+    question: "Jak zapíšeme atom kyslíku, který přijal dva elektrony?",
+    answers: ["O2-", "O2+", "O0", "O+"],
+    correct: 0,
+    explanation: "Atom kyslíku, který přijal dva elektrony, se zapíše jako O2-."
+  },
+  {
+    question: "Co se stane s oxidačním číslem, když částice přijímá elektrony?",
+    answers: ["Snižuje se", "Zvyšuje se", "Nemění se", "Vždy se stane nulovým"],
+    correct: 0,
+    explanation: "Když částice přijímá elektrony, její oxidační číslo se snižuje."
+  }
     ];
 
     const state = {

@@ -383,7 +383,14 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
           const questionBank = [
-        {
+        [
+  {
+    question: "Před kolika miliardami let vznikl vesmír podle materiálu?",
+    answers: ["13,7 miliardami let", "5,7 miliardami let", "66 miliony let", "118 miliardami let"],
+    correct: 0,
+    explanation: "V materiálu je uvedeno, že vesmír vznikl před 13,7 miliardami let."
+  },
+  {
     question: "Jak se nazývá událost, při které vznikl prostor, čas a hmota?",
     answers: ["Velký třesk", "Supernova", "Srážka planet", "Vznik Slunce"],
     correct: 0,
@@ -414,6 +421,18 @@
     explanation: "V raném vesmíru vzniklo také stopové množství lithia."
   },
   {
+    question: "Kde vznikaly těžší prvky až po železo?",
+    answers: ["V oceánech", "Ve hvězdách", "V zemské kůře", "V laboratořích"],
+    correct: 1,
+    explanation: "Těžší prvky až po železo vznikaly termonukleárními reakcemi ve hvězdách."
+  },
+  {
+    question: "Jaké protonové číslo má železo?",
+    answers: ["8", "13", "26", "92"],
+    correct: 2,
+    explanation: "Železo má protonové číslo 26."
+  },
+  {
     question: "Jak vznikly prvky těžší než železo?",
     answers: ["Pouze v zemské kůře", "Srážkou neutronových hvězd nebo výbuchem supernov", "Rozpadem vody", "Při fotosyntéze"],
     correct: 1,
@@ -424,6 +443,12 @@
     answers: ["Iridium", "Lithium", "Sodík", "Vápník"],
     correct: 0,
     explanation: "Meteorit Chicxulub zanechal v zemské kůře tenkou vrstvu iridia."
+  },
+  {
+    question: "Který prvek měl protonové číslo 118 a byl uměle připraven v roce 2002?",
+    answers: ["Uhlík", "Ununoctium", "Vodík", "Železo"],
+    correct: 1,
+    explanation: "V materiálu je uveden uměle připravený prvek s protonovým číslem 118 jako Ununoctium."
   },
   {
     question: "Co znamená řecké slovo atomos?",
@@ -492,6 +517,12 @@
     explanation: "Niels Bohr upravil Rutherfordův model a předpokládal, že elektrony obíhají po orbitech."
   },
   {
+    question: "Ve kterém roce Niels Bohr rozpracoval Rutherfordův model?",
+    answers: ["1808", "1897", "1913", "1932"],
+    correct: 2,
+    explanation: "Bohrův model vznikl v roce 1913."
+  },
+  {
     question: "Kdo vytvořil kvantový model atomu?",
     answers: ["Erwin Schrödinger", "John Dalton", "Dmitrij Mendělejev", "Joseph Thomson"],
     correct: 0,
@@ -508,6 +539,12 @@
     answers: ["James Chadwick", "Niels Bohr", "Ernest Rutherford", "John Dalton"],
     correct: 0,
     explanation: "Neutron objevil James Chadwick."
+  },
+  {
+    question: "Ve kterém roce byl objeven neutron?",
+    answers: ["430 př. n. l.", "1808", "1911", "1932"],
+    correct: 3,
+    explanation: "Neutron byl objeven v roce 1932."
   },
   {
     question: "Co je atom?",
@@ -636,7 +673,7 @@
     explanation: "Izotopy jsou atomy téhož prvku, které se liší počtem neutronů v jádře."
   },
   {
-    question: "Jak se nazývají izotopy vodíku?",
+    question: "Jaké jsou izotopy vodíku uvedené v materiálu?",
     answers: ["Protium, deuterium, tritium", "Bronz, mosaz, pájka", "Kation, anion, atom", "Sodík, chlor, argon"],
     correct: 0,
     explanation: "Materiál uvádí izotopy vodíku protium, deuterium a tritium."
@@ -678,8 +715,8 @@
     explanation: "Po Mendělejevovi je pojmenován prvek mendelevium."
   },
   {
-    question: "Co je ion?",
-    answers: ["Elektricky nabitá částice", "Neutrální částice", "Částice v jádře atomu", "Jiný název pro neutron"],
+    question: "Co je iont?",
+    answers: ["Elektricky nabitá částice", "Vždy neutrální atom", "Pouze částice v jádře", "Jiný název pro neutron"],
     correct: 0,
     explanation: "Iont je elektricky nabitá částice."
   },
@@ -718,6 +755,373 @@
     answers: ["Snižuje se", "Zvyšuje se", "Nemění se", "Vždy se stane nulovým"],
     correct: 0,
     explanation: "Když částice přijímá elektrony, její oxidační číslo se snižuje."
+  },
+          [
+  {
+    question: "Jak se nazývá kladně nabitý iont?",
+    answers: ["Anion", "Kation", "Nukleon", "Izotop"],
+    correct: 1,
+    explanation: "Kladně nabitý iont se nazývá kation."
+  },
+  {
+    question: "Jak se nazývá záporně nabitý iont?",
+    answers: ["Kation", "Anion", "Proton", "Nukleon"],
+    correct: 1,
+    explanation: "Záporně nabitý iont se nazývá anion."
+  },
+  {
+    question: "Co se stane s atomem lithia, když odevzdá jeden elektron?",
+    answers: ["Vznikne Li+", "Vznikne Li-", "Vznikne neutron", "Vznikne molekula Li2"],
+    correct: 0,
+    explanation: "Lithium odevzdáním elektronu vytvoří kation Li+."
+  },
+  {
+    question: "Co se stane s atomem chloru, když přijme jeden elektron?",
+    answers: ["Vznikne Cl+", "Vznikne Cl-", "Vznikne Cl2+", "Vznikne proton"],
+    correct: 1,
+    explanation: "Chlor přijetím elektronu vytvoří chloridový anion Cl-."
+  },
+  {
+    question: "Jaký iont vznikne z atomu hliníku ztrátou tří elektronů?",
+    answers: ["Al3+", "Al3-", "Al+", "Al0"],
+    correct: 0,
+    explanation: "Hliník ztrátou tří elektronů vytvoří kation Al3+."
+  },
+  {
+    question: "Jaký iont vznikne z atomu fosforu přijetím tří elektronů?",
+    answers: ["P3+", "P3-", "P5+", "P0"],
+    correct: 1,
+    explanation: "Fosfor přijetím tří elektronů vytvoří anion P3-."
+  },
+  {
+    question: "Jak se nazývá ion O2-?",
+    answers: ["Oxidový anion", "Kyslíkový kation", "Oxoniový kation", "Síranový anion"],
+    correct: 0,
+    explanation: "Ion O2- se nazývá oxidový anion."
+  },
+  {
+    question: "Jak se nazývá ion S2-?",
+    answers: ["Síranový anion", "Sulfidový anion", "Siřičitanový anion", "Sodný kation"],
+    correct: 1,
+    explanation: "Ion S2- se nazývá sulfidový anion."
+  },
+  {
+    question: "Jak se nazývá ion OH-?",
+    answers: ["Hydroxidový anion", "Oxidový anion", "Hydridový anion", "Oxoniový kation"],
+    correct: 0,
+    explanation: "Ion OH- se nazývá hydroxidový anion."
+  },
+  {
+    question: "Jak se nazývá ion H3O+?",
+    answers: ["Hydroxidový anion", "Oxoniový kation", "Amonný kation", "Vodíkový anion"],
+    correct: 1,
+    explanation: "H3O+ je oxoniový kation."
+  },
+  {
+    question: "Jak se nazývá ion NH4+?",
+    answers: ["Dusičnanový anion", "Amonný kation", "Oxoniový kation", "Hydroxidový anion"],
+    correct: 1,
+    explanation: "NH4+ je amonný kation."
+  },
+  {
+    question: "Jaký vzorec má síranový anion?",
+    answers: ["SO4 2-", "SO3 2-", "CO3 2-", "NO3-"],
+    correct: 0,
+    explanation: "Síranový anion má vzorec SO4 2-."
+  },
+  {
+    question: "Jaký vzorec má siřičitanový anion?",
+    answers: ["SO4 2-", "SO3 2-", "NO2-", "ClO3-"],
+    correct: 1,
+    explanation: "Siřičitanový anion má vzorec SO3 2-."
+  },
+  {
+    question: "Jaký vzorec má uhličitanový anion?",
+    answers: ["CO3 2-", "NO3-", "SO4 2-", "MnO4-"],
+    correct: 0,
+    explanation: "Uhličitanový anion má vzorec CO3 2-."
+  },
+  {
+    question: "Jaký vzorec má dusičnanový anion?",
+    answers: ["NO2-", "NO3-", "NH4+", "N3-"],
+    correct: 1,
+    explanation: "Dusičnanový anion má vzorec NO3-."
+  },
+  {
+    question: "Jaký vzorec má dusitanový anion?",
+    answers: ["NO2-", "NO3-", "N2-", "NH4+"],
+    correct: 0,
+    explanation: "Dusitanový anion má vzorec NO2-."
+  },
+  {
+    question: "Jaký vzorec má chloristanový anion?",
+    answers: ["ClO4-", "ClO3-", "Cl-", "ClO-"],
+    correct: 0,
+    explanation: "Chloristanový anion má vzorec ClO4-."
+  },
+  {
+    question: "Jaký vzorec má chlorečnanový anion?",
+    answers: ["ClO4-", "ClO3-", "ClO-", "Cl-"],
+    correct: 1,
+    explanation: "Chlorečnanový anion má vzorec ClO3-."
+  },
+  {
+    question: "Jaký vzorec má manganistanový anion?",
+    answers: ["MnO4-", "Mg2+", "Mn2+", "CO3 2-"],
+    correct: 0,
+    explanation: "Manganistanový anion má vzorec MnO4-."
+  },
+  {
+    question: "Jaká koncovka odpovídá oxidačnímu číslu I?",
+    answers: ["-natý", "-ný", "-itý", "-ičitý"],
+    correct: 1,
+    explanation: "Oxidačnímu číslu I odpovídá koncovka -ný."
+  },
+  {
+    question: "Jaká koncovka odpovídá oxidačnímu číslu II?",
+    answers: ["-natý", "-itý", "-ový", "-istý"],
+    correct: 0,
+    explanation: "Oxidačnímu číslu II odpovídá koncovka -natý."
+  },
+  {
+    question: "Jaká koncovka odpovídá oxidačnímu číslu III?",
+    answers: ["-ičitý", "-itý", "-ečný", "-ový"],
+    correct: 1,
+    explanation: "Oxidačnímu číslu III odpovídá koncovka -itý."
+  },
+  {
+    question: "Jaká koncovka odpovídá oxidačnímu číslu IV?",
+    answers: ["-ičitý", "-ičný", "-natý", "-ný"],
+    correct: 0,
+    explanation: "Oxidačnímu číslu IV odpovídá koncovka -ičitý."
+  },
+  {
+    question: "Jaká koncovka odpovídá oxidačnímu číslu V?",
+    answers: ["-ový", "-istý", "-ičný nebo -ečný", "-natý"],
+    correct: 2,
+    explanation: "Oxidačnímu číslu V odpovídá koncovka -ičný nebo -ečný."
+  },
+  {
+    question: "Jaká koncovka odpovídá oxidačnímu číslu VI?",
+    answers: ["-ový", "-istý", "-itý", "-ný"],
+    correct: 0,
+    explanation: "Oxidačnímu číslu VI odpovídá koncovka -ový."
+  },
+  {
+    question: "Jaká koncovka odpovídá oxidačnímu číslu VII?",
+    answers: ["-itý", "-istý", "-natý", "-ičitý"],
+    correct: 1,
+    explanation: "Oxidačnímu číslu VII odpovídá koncovka -istý."
+  },
+  {
+    question: "Co platí pro oxidační číslo volného prvku?",
+    answers: ["Je vždy 0", "Je vždy I", "Je vždy -I", "Je vždy VII"],
+    correct: 0,
+    explanation: "Volné prvky, například Al, Mg, H2 nebo Cl2, mají oxidační číslo 0."
+  },
+  {
+    question: "Jaké oxidační číslo má vodík v molekule H2?",
+    answers: ["0", "+I", "-I", "+II"],
+    correct: 0,
+    explanation: "Vodík v molekule H2 je volný prvek, proto má oxidační číslo 0."
+  },
+  {
+    question: "Jaké oxidační číslo má chlor v molekule Cl2?",
+    answers: ["-I", "0", "+I", "+VII"],
+    correct: 1,
+    explanation: "Chlor v molekule Cl2 je volný prvek, proto má oxidační číslo 0."
+  },
+  {
+    question: "Co se děje při oxidaci?",
+    answers: ["Oxidační číslo se zvyšuje", "Oxidační číslo se snižuje", "Částice vždy přijímá protony", "Vzniká pouze voda"],
+    correct: 0,
+    explanation: "Při oxidaci se oxidační číslo zvyšuje."
+  },
+  {
+    question: "Co se děje při redukci?",
+    answers: ["Oxidační číslo se zvyšuje", "Oxidační číslo se snižuje", "Částice vždy ztrácí neutrony", "Vzniká vždy kyselina"],
+    correct: 1,
+    explanation: "Při redukci se oxidační číslo snižuje."
+  },
+  {
+    question: "Co částice při oxidaci dělá s elektrony?",
+    answers: ["Odevzdává elektrony", "Přijímá elektrony", "Mění elektrony na neutrony", "Elektrony se nemění"],
+    correct: 0,
+    explanation: "Při oxidaci částice odevzdává elektrony."
+  },
+  {
+    question: "Co částice při redukci dělá s elektrony?",
+    answers: ["Odevzdává elektrony", "Přijímá elektrony", "Ztrácí protony", "Rozpadá se na atomy"],
+    correct: 1,
+    explanation: "Při redukci částice přijímá elektrony."
+  },
+  {
+    question: "Který zápis vyjadřuje oxidaci hořčíku?",
+    answers: ["Mg0 → Mg2+ + 2e-", "Mg2+ + 2e- → Mg0", "Mg0 + 2e- → Mg2+", "Mg2+ → Mg0 + 2e-"],
+    correct: 0,
+    explanation: "Hořčík se oxiduje, protože přechází z oxidačního čísla 0 na +II a odevzdává elektrony."
+  },
+  {
+    question: "Který zápis vyjadřuje redukci vápenatého kationtu?",
+    answers: ["Ca2+ + 2e- → Ca0", "Ca0 → Ca2+ + 2e-", "Ca2+ → Ca4+ + 2e-", "Ca0 + 2e- → Ca2+"],
+    correct: 0,
+    explanation: "Ca2+ se redukuje na Ca0 přijetím dvou elektronů."
+  },
+  {
+    question: "Co je redukční činidlo?",
+    answers: ["Látka, která se sama oxiduje", "Látka, která se sama redukuje", "Látka bez elektronů", "Látka, která nikdy nereaguje"],
+    correct: 0,
+    explanation: "Redukční činidlo vyvolává redukci jiné látky a samo se oxiduje."
+  },
+  {
+    question: "Co je oxidační činidlo?",
+    answers: ["Látka, která se sama redukuje", "Látka, která se sama oxiduje", "Látka, která nemá protony", "Vždy kov vlevo od vodíku"],
+    correct: 0,
+    explanation: "Oxidační činidlo vyvolává oxidaci jiné látky a samo se redukuje."
+  },
+  {
+    question: "Jak se nazývají reakce, při kterých dochází ke změně oxidačních čísel atomů prvků?",
+    answers: ["Redoxní reakce", "Neutralizace", "Srážení", "Vypařování"],
+    correct: 0,
+    explanation: "Redoxní reakce jsou reakce, při kterých dochází ke změně oxidačních čísel."
+  },
+  {
+    question: "Co znamená zkratka ΔX u chemických vazeb?",
+    answers: ["Rozdíl elektronegativit prvků", "Součet protonů", "Počet neutronů", "Hmotnost molekuly"],
+    correct: 0,
+    explanation: "ΔX označuje rozdíl elektronegativit vázaných prvků."
+  },
+  {
+    question: "Jak se vypočítá rozdíl elektronegativit?",
+    answers: ["Větší elektronegativita minus menší elektronegativita", "Součet obou elektronegativit", "Menší minus větší", "Součin elektronegativit"],
+    correct: 0,
+    explanation: "Rozdíl elektronegativit se počítá jako větší hodnota minus menší hodnota."
+  },
+  {
+    question: "Jaký typ vazby vzniká, když je ΔX menší než 0,4?",
+    answers: ["Kovalentní nepolární vazba", "Kovalentní polární vazba", "Iontová vazba", "Kovová vazba"],
+    correct: 0,
+    explanation: "Při ΔX menším než 0,4 vzniká kovalentní nepolární vazba."
+  },
+  {
+    question: "Jaký typ vazby vzniká, když je ΔX mezi 0,4 a 1,7?",
+    answers: ["Kovalentní polární vazba", "Kovalentní nepolární vazba", "Iontová vazba", "Jaderná vazba"],
+    correct: 0,
+    explanation: "Při rozdílu elektronegativit mezi 0,4 a 1,7 vzniká kovalentní polární vazba."
+  },
+  {
+    question: "Jaký typ vazby vzniká, když je ΔX větší než 1,7?",
+    answers: ["Iontová vazba", "Kovalentní nepolární vazba", "Kovalentní polární vazba", "Vodíková vazba"],
+    correct: 0,
+    explanation: "Při ΔX větším než 1,7 vzniká iontová vazba."
+  },
+  {
+    question: "Jaký typ vazby je v molekule I2?",
+    answers: ["Kovalentní nepolární", "Kovalentní polární", "Iontová", "Kovová"],
+    correct: 0,
+    explanation: "V molekule I2 jsou stejné atomy, rozdíl elektronegativit je 0, proto je vazba nepolární."
+  },
+  {
+    question: "Jaký typ vazby je v molekule HCl podle rozdílu elektronegativit uvedeného v materiálu?",
+    answers: ["Kovalentní polární", "Kovalentní nepolární", "Iontová", "Kovová"],
+    correct: 0,
+    explanation: "U HCl je ΔX přibližně 0,86, proto jde o kovalentní polární vazbu."
+  },
+  {
+    question: "Jaký typ vazby vzniká mezi lithiem a chlorem podle materiálu?",
+    answers: ["Iontová", "Kovalentní nepolární", "Kovalentní polární", "Kovová"],
+    correct: 0,
+    explanation: "Lithium odevzdá elektron a chlor ho přijme, proto vzniká iontová vazba."
+  },
+  {
+    question: "Co platí pro vazebný elektronový pár v kovalentní nepolární vazbě?",
+    answers: ["Leží mezi oběma vázanými atomy rovnoměrně", "Je úplně vytržen jedním atomem", "Leží pouze v jádře", "Neexistuje"],
+    correct: 0,
+    explanation: "U nepolární kovalentní vazby je vazebný elektronový pár sdílen rovnoměrně."
+  },
+  {
+    question: "Co platí pro vazebný elektronový pár v kovalentní polární vazbě?",
+    answers: ["Je posunut blíže k elektronegativnějšímu prvku", "Leží pouze u elektropozitivnějšího prvku", "Je zcela ztracen", "Nachází se v jádře atomu"],
+    correct: 0,
+    explanation: "V polární kovalentní vazbě je elektronový pár více přitahován elektronegativnějším prvkem."
+  },
+  {
+    question: "Na kterém atomu v molekule vody vzniká částečný záporný náboj?",
+    answers: ["Na kyslíku", "Na vodíku", "Na obou stejně", "Na žádném atomu"],
+    correct: 0,
+    explanation: "Kyslík je elektronegativnější, proto na něm vzniká částečný záporný náboj."
+  },
+  {
+    question: "Na kterém atomu v molekule vody vzniká částečný kladný náboj?",
+    answers: ["Na vodíku", "Na kyslíku", "Na elektronu", "Na neutronu"],
+    correct: 0,
+    explanation: "Vodík má v molekule vody částečný kladný náboj."
+  },
+  {
+    question: "Kdo sestavil Beketovovu řadu napětí kovů?",
+    answers: ["Nikolaj Nikolajevič Beketov", "Dmitrij Mendělejev", "Niels Bohr", "John Dalton"],
+    correct: 0,
+    explanation: "Beketovovu řadu napětí kovů sestavil ruský chemik Nikolaj Nikolajevič Beketov."
+  },
+  {
+    question: "Podle čeho Beketov rozdělil kovy na ušlechtilé a neušlechtilé?",
+    answers: ["Podle reakce s kyselinami", "Podle barvy", "Podle skupenství", "Podle vůně"],
+    correct: 0,
+    explanation: "Kovy rozdělil podle jejich reakce s kyselinami."
+  },
+  {
+    question: "Co platí pro neušlechtilé kovy v Beketovově řadě?",
+    answers: ["Reagují s kyselinami za vzniku vodíku", "Nikdy nereagují", "Jsou vždy kapalné", "Jsou napravo od zlata"],
+    correct: 0,
+    explanation: "Neušlechtilé kovy reagují s kyselinami za vzniku vodíku."
+  },
+  {
+    question: "Co platí pro ušlechtilé kovy v Beketovově řadě?",
+    answers: ["Nereagují s kyselinami za vzniku vodíku", "Vždy reagují s vodou", "Vždy vytěsňují vodík z kyselin", "Jsou vždy vlevo od vodíku"],
+    correct: 0,
+    explanation: "Ušlechtilé kovy nereagují s kyselinami za vzniku vodíku."
+  },
+  {
+    question: "Kde v Beketovově řadě stojí kovy, které vytěsňují vodík z kyselin?",
+    answers: ["Nalevo od vodíku", "Napravo od vodíku", "Pouze za zlatem", "Pouze mezi mědí a stříbrem"],
+    correct: 0,
+    explanation: "Kovy nalevo od vodíku vytěsňují vodík z kyselin."
+  },
+  {
+    question: "Které kovy podle materiálu reagují s vodou za vzniku hydroxidu a vodíku?",
+    answers: ["Na, K, Ca", "Cu, Ag, Au", "Hg, Au, H", "Sn, Pb, Cu"],
+    correct: 0,
+    explanation: "Kovy zcela nalevo v řadě, například Na, K a Ca, reagují s vodou za vzniku hydroxidu a vodíku."
+  },
+  {
+    question: "Které kovy podle materiálu reagují s vodní parou za vzniku oxidu kovu a vodíku?",
+    answers: ["Mg, Al, Zn", "Cu, Ag, Au", "Hg, Au, H", "Ag, Hg, Au"],
+    correct: 0,
+    explanation: "Méně reaktivní kovy nalevo od vodíku, například Mg, Al a Zn, reagují s vodní parou."
+  },
+  {
+    question: "Co dokáže kov vůči kovům, které jsou v Beketovově řadě napravo od něj?",
+    answers: ["Vytěsnit je z roztoku", "Změnit je na vodík", "Změnit je na nekovy", "Zabránit jejich existenci"],
+    correct: 0,
+    explanation: "Kov je schopen vytěsnit z roztoku kovy, které jsou v řadě napravo od něj."
+  },
+  {
+    question: "Který z uvedených kovů leží v Beketovově řadě napravo od vodíku?",
+    answers: ["Měď", "Zinek", "Hořčík", "Vápník"],
+    correct: 0,
+    explanation: "Měď leží napravo od vodíku, proto nevytěsňuje vodík z běžných kyselin."
+  },
+  {
+    question: "S kterými kyselinami mohou reagovat kovy napravo od vodíku?",
+    answers: ["S kyselinami se silnými oxidačními účinky", "Pouze s vodou", "Pouze s hydroxidy", "S žádnými látkami"],
+    correct: 0,
+    explanation: "Kovy napravo od vodíku mohou reagovat s kyselinami se silnými oxidačními účinky, například H2SO4 a HNO3."
+  },
+  {
+    question: "Co vzniká při reakci kovu nalevo od vodíku s kyselinou?",
+    answers: ["Sůl a vodík", "Hydroxid a kyslík", "Oxid a dusík", "Pouze voda"],
+    correct: 0,
+    explanation: "Kov nalevo od vodíku vytěsňuje vodík z kyseliny, vzniká sůl a vodík."
   }
           ];
 
@@ -887,860 +1291,6 @@
             $("showReviewBtn").textContent = review.hidden ? "Zobrazit přehled" : "Skrýt přehled";
           });
 
-    });
-  </script>
-</body>
-</html>
-    .app {
-      width: min(980px, 100%);
-      background: rgba(255, 255, 255, 0.86);
-      backdrop-filter: blur(8px);
-      border: 2px solid rgba(255, 47, 47, 0.18);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 20px clamp(18px, 4vw, 34px);
-      background: linear-gradient(135deg, var(--primary), #fff6a3);
-      border-bottom: 3px solid rgba(255, 47, 47, 0.3);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .logo {
-      width: 64px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      border: 2px solid var(--accent);
-      display: grid;
-      place-items: center;
-      background: var(--primary);
-      box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.22);
-      flex: 0 0 auto;
-    }
-
-    .logo svg { width: 45px; height: 45px; }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(1.45rem, 3vw, 2.35rem);
-      line-height: 1;
-    }
-
-    .subtitle {
-      margin: 5px 0 0;
-      color: #5f3200;
-      font-weight: 650;
-      font-size: clamp(0.9rem, 1.8vw, 1rem);
-    }
-
-    .scorebar {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .pill {
-      background: rgba(255, 255, 255, 0.75);
-      border: 1px solid rgba(201, 20, 20, 0.2);
-      border-radius: 999px;
-      padding: 9px 13px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    main {
-      padding: clamp(18px, 4vw, 36px);
-    }
-
-    .screen { display: none; }
-    .screen.active { display: block; animation: fade 220ms ease; }
-
-    @keyframes fade {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .intro, .result-card, .question-card {
-      background: var(--panel);
-      border-radius: var(--radius);
-      padding: clamp(20px, 4vw, 34px);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
-    }
-
-    .intro h2, .result-card h2 {
-      margin-top: 0;
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-    }
-
-    .intro p, .result-card p {
-      color: var(--muted);
-      font-size: 1.06rem;
-      line-height: 1.55;
-    }
-
-    select, button {
-      font: inherit;
-    }
-
-    select {
-      width: 100%;
-      padding: 13px 14px;
-      border-radius: 15px;
-      border: 2px solid rgba(255, 47, 47, 0.22);
-      background: #fff;
-      color: var(--text);
-      font-weight: 650;
-    }
-
-    .btn {
-      border: 0;
-      border-radius: 16px;
-      padding: 14px 18px;
-      cursor: pointer;
-      font-weight: 900;
-      transition: transform 130ms ease, filter 130ms ease, box-shadow 130ms ease;
-      box-shadow: 0 10px 18px rgba(201, 20, 20, 0.18);
-    }
-
-    .btn:hover { transform: translateY(-1px); filter: brightness(1.02); }
-    .btn:active { transform: translateY(1px); }
-
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .btn-secondary {
-      background: #ffe66d;
-      color: #491b00;
-      box-shadow: none;
-    }
-
-    .topline {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 18px;
-      color: var(--muted);
-      font-weight: 800;
-    }
-
-    .progress {
-      height: 12px;
-      background: #ffe8e8;
-      border-radius: 999px;
-      overflow: hidden;
-      margin: 0 0 24px;
-    }
-
-    .progress > div {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, var(--accent), #ff9c00);
-      border-radius: inherit;
-      transition: width 260ms ease;
-    }
-
-    .question {
-      font-size: clamp(1.3rem, 3vw, 2rem);
-      margin: 0 0 22px;
-      line-height: 1.25;
-    }
-
-    .answers {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .answer {
-      min-height: 76px;
-      text-align: left;
-      border: 2px solid rgba(0, 0, 0, 0.08);
-      border-radius: 18px;
-      background: #fff;
-      padding: 16px;
-      cursor: pointer;
-      font-weight: 800;
-      color: var(--text);
-      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
-    }
-
-    .answer:hover:not(:disabled) {
-      transform: translateY(-2px);
-      border-color: var(--accent);
-      background: #fffdf0;
-    }
-
-    .answer:disabled { cursor: not-allowed; }
-    .answer.correct { border-color: var(--ok); background: #e9f8ef; }
-    .answer.wrong { border-color: var(--bad); background: #fdecea; }
-
-    .feedback {
-      margin-top: 18px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: #f7f7f7;
-      display: none;
-      line-height: 1.5;
-      font-weight: 650;
-    }
-
-    .feedback.show { display: block; }
-
-    .actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 12px;
-      margin-top: 22px;
-      flex-wrap: wrap;
-    }
-
-    .result-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin: 24px 0;
-    }
-
-    .stat {
-      background: #fff8cf;
-      border: 2px solid rgba(255, 47, 47, 0.18);
-      border-radius: 20px;
-      padding: 22px;
-      text-align: center;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      color: var(--accent-dark);
-      line-height: 1;
-    }
-
-    .stat span {
-      display: block;
-      margin-top: 8px;
-      color: #6c3a00;
-      font-weight: 900;
-    }
-
-    .review {
-      display: grid;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .review-item {
-      border-left: 6px solid #ddd;
-      background: #fafafa;
-      border-radius: 14px;
-      padding: 13px 14px;
-      line-height: 1.4;
-    }
-
-    .review-item.good { border-left-color: var(--ok); }
-    .review-item.bad { border-left-color: var(--bad); }
-
-    .small {
-      color: var(--muted);
-      font-size: 0.93rem;
-      margin-top: 6px;
-    }
-
-    @media (max-width: 720px) {
-      header {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .scorebar { justify-content: flex-start; }
-      .answers, .settings, .result-grid { grid-template-columns: 1fr; }
-      .answer { min-height: auto; }
-    }
-  </style>
-</head>
-<body>
-  <div class="app">
-    <header>
-      <div class="brand">
-        <div class="logo" aria-hidden="true">
-          <svg viewBox="0 0 100 100" role="img">
-            <polygon points="56 5 22 57 48 48 44 95 78 38 52 48" fill="#ff2f2f"></polygon>
-          </svg>
-        </div>
-        <div>
-          <h1>Částicové složení látek</h1>
-          <p class="subtitle">Chemický průmysl v ČR</p>
-        </div>
-      </div>
-      <div class="scorebar" aria-label="Stav hry">
-        <div class="pill">Otázka: <span id="roundNow">0</span>/10</div>
-        <div class="pill">Energie: <span id="lightnings">0</span></div>
-      </div>
-    </header>
-
-    <main>
-      <section id="startScreen" class="screen active">
-        <div class="intro">
-          <h2>Pravidla</h2>
-          <p>Hra náhodně vybere 10 otázek z balíčku. Za každou správnou odpověď získáš 1 energii. Na konci uvidíš počet správných odpovědí, množství energie a přehled kola.</p>
-
-          <button class="btn btn-primary" id="startBtn">Spustit hru</button>
-        </div>
-      </section>
-
-      <section id="gameScreen" class="screen">
-        <div class="question-card">
-          <div class="topline">            <span id="scoreLabel">Správně: 0</span>
-          </div>
-          <div class="progress" aria-label="Průběh kola"><div id="progressBar"></div></div>
-          <h2 id="questionText" class="question"></h2>
-          <div id="answers" class="answers"></div>
-          <div id="feedback" class="feedback"></div>
-          <div class="actions">
-            <button class="btn btn-secondary" id="nextBtn" hidden>Další otázka</button>
-          </div>
-        </div>
-      </section>
-
-      <section id="resultScreen" class="screen">
-        <div class="result-card">
-          <h2>Výsledek kola</h2>
-          <p id="resultMessage"></p>
-          <div class="result-grid">
-            <div class="stat"><strong id="finalScore">0/10</strong><span>správných odpovědí</span></div>
-            <div class="stat"><strong id="finalLightnings">0</strong><span>získané energie</span></div>
-          </div>
-          <div class="actions">
-            <button class="btn btn-secondary" id="showReviewBtn">Zobrazit přehled</button>
-            <button class="btn btn-primary" id="restartBtn">Hrát znovu</button>
-          </div>
-          <div id="review" class="review" hidden></div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <script>
-    const questionBank = [
-      [
-  {
-    question: "Jak se nazývá událost, při které vznikl prostor, čas a hmota?",
-    answers: ["Velký třesk", "Supernova", "Srážka planet", "Vznik Slunce"],
-    correct: 0,
-    explanation: "Prostor, čas a hmota vznikly při Velkém třesku."
-  },
-  {
-    question: "Kolik chemických prvků je dnes známo?",
-    answers: ["92", "118", "26", "63"],
-    correct: 1,
-    explanation: "V materiálu je uvedeno, že dnes je známo 118 prvků."
-  },
-  {
-    question: "Kolik prvků se přirozeně vyskytuje v přírodě?",
-    answers: ["28", "66", "92", "118"],
-    correct: 2,
-    explanation: "Přirozeně se v přírodě vyskytuje 92 prvků."
-  },
-  {
-    question: "Které prvky vznikly jako první po Velkém třesku?",
-    answers: ["Železo a zlato", "Vodík a helium", "Uhlík a kyslík", "Sodík a chlor"],
-    correct: 1,
-    explanation: "Prvními prvky byly nejlehčí prvky, hlavně vodík a helium."
-  },
-  {
-    question: "Který prvek vznikl ve stopovém množství v rané fázi vesmíru?",
-    answers: ["Lithium", "Zlato", "Uran", "Železo"],
-    correct: 0,
-    explanation: "V raném vesmíru vzniklo také stopové množství lithia."
-  },
-  {
-    question: "Jak vznikly prvky těžší než železo?",
-    answers: ["Pouze v zemské kůře", "Srážkou neutronových hvězd nebo výbuchem supernov", "Rozpadem vody", "Při fotosyntéze"],
-    correct: 1,
-    explanation: "Prvky těžší než železo vznikaly například při srážkách neutronových hvězd nebo výbuších supernov."
-  },
-  {
-    question: "Který vzácný kov zanechal v zemské kůře meteorit Chicxulub?",
-    answers: ["Iridium", "Lithium", "Sodík", "Vápník"],
-    correct: 0,
-    explanation: "Meteorit Chicxulub zanechal v zemské kůře tenkou vrstvu iridia."
-  },
-  {
-    question: "Co znamená řecké slovo atomos?",
-    answers: ["Nabitý", "Nedělitelný", "Kulatý", "Neviditelný"],
-    correct: 1,
-    explanation: "Atomos znamená nedělitelný."
-  },
-  {
-    question: "Který řecký učenec je spojován s představou atomů jako nedělitelných částic?",
-    answers: ["Demokritos", "Mendělejev", "Bohr", "Dalton"],
-    correct: 0,
-    explanation: "Demokritos předpokládal, že látky se skládají z malých nedělitelných částic."
-  },
-  {
-    question: "Kdo vzkřísil Demokritovu myšlenku atomů v novověku?",
-    answers: ["John Dalton", "Joseph Thomson", "Ernest Rutherford", "James Chadwick"],
-    correct: 0,
-    explanation: "John Dalton navázal na myšlenku atomů a vytvořil atomovou teorii."
-  },
-  {
-    question: "Jak si John Dalton představoval atom?",
-    answers: ["Jako kladnou kouli s elektrony", "Jako nedělitelnou kuličku", "Jako oblak pravděpodobnosti", "Jako jádro bez elektronů"],
-    correct: 1,
-    explanation: "Dalton si atom představoval jako malou nedělitelnou kuličku."
-  },
-  {
-    question: "Kdo objevil elektron?",
-    answers: ["Joseph Thomson", "Ernest Rutherford", "Niels Bohr", "Dmitrij Mendělejev"],
-    correct: 0,
-    explanation: "Elektron objevil Joseph Thomson."
-  },
-  {
-    question: "Jak se nazývá Thomsonův model atomu?",
-    answers: ["Planetární model", "Pudingový model", "Kvantový model", "Kuličkový model"],
-    correct: 1,
-    explanation: "Thomsonův model se nazývá pudingový model."
-  },
-  {
-    question: "Jak byly podle Thomsona v atomu rozmístěny elektrony?",
-    answers: ["Jako rozinky v pudinku", "Pouze v jádře", "V jediné přímce", "Mimo atom"],
-    correct: 0,
-    explanation: "Thomson si představoval elektrony jako rozinky rozmístěné v kladně nabité kouli."
-  },
-  {
-    question: "Kdo provedl pokus se zlatou fólií?",
-    answers: ["Rutherford", "Bohr", "Dalton", "Schrödinger"],
-    correct: 0,
-    explanation: "Ernest Rutherford provedl pokus se zlatou fólií."
-  },
-  {
-    question: "Co Rutherfordův pokus dokázal?",
-    answers: ["Že atom nemá jádro", "Že protony jsou soustředěny v jádře", "Že elektrony jsou v jádře", "Že atomy neexistují"],
-    correct: 1,
-    explanation: "Rutherfordův pokus ukázal, že kladně nabité částice jsou soustředěny v jádře atomu."
-  },
-  {
-    question: "Jak se nazývá Rutherfordův model atomu?",
-    answers: ["Planetární model", "Kuličkový model", "Pudingový model", "Model triád"],
-    correct: 0,
-    explanation: "Rutherfordův model je označován jako planetární model."
-  },
-  {
-    question: "Kdo rozpracoval Rutherfordův model o představu elektronů na orbitech?",
-    answers: ["Niels Bohr", "James Chadwick", "Joseph Thomson", "Leukippos"],
-    correct: 0,
-    explanation: "Niels Bohr upravil Rutherfordův model a předpokládal, že elektrony obíhají po orbitech."
-  },
-  {
-    question: "Kdo vytvořil kvantový model atomu?",
-    answers: ["Erwin Schrödinger", "John Dalton", "Dmitrij Mendělejev", "Joseph Thomson"],
-    correct: 0,
-    explanation: "Kvantový model atomu vytvořil Erwin Schrödinger."
-  },
-  {
-    question: "Co popisuje orbital?",
-    answers: ["Přibližnou oblast výskytu elektronu", "Počet protonů v jádře", "Hmotnost celého atomu", "Název prvku"],
-    correct: 0,
-    explanation: "Orbital je přibližná oblast, kde se elektron pravděpodobně vyskytuje."
-  },
-  {
-    question: "Kdo objevil neutron?",
-    answers: ["James Chadwick", "Niels Bohr", "Ernest Rutherford", "John Dalton"],
-    correct: 0,
-    explanation: "Neutron objevil James Chadwick."
-  },
-  {
-    question: "Co je atom?",
-    answers: ["Základní stavební částice hmoty", "Pouze druh iontu", "Vždy záporně nabitá částice", "Směs více prvků"],
-    correct: 0,
-    explanation: "Atom je základní stavební částice hmoty."
-  },
-  {
-    question: "Z čeho se skládá atom?",
-    answers: ["Z jádra a elektronového obalu", "Jen z elektronů", "Jen z neutronů", "Z molekul vody"],
-    correct: 0,
-    explanation: "Atom se skládá z atomového jádra a elektronového obalu."
-  },
-  {
-    question: "Které částice se nacházejí v jádře atomu?",
-    answers: ["Protony a neutrony", "Elektrony a protony", "Elektrony a neutrony", "Pouze elektrony"],
-    correct: 0,
-    explanation: "V jádře atomu jsou protony a neutrony."
-  },
-  {
-    question: "Kde se nacházejí elektrony?",
-    answers: ["V elektronovém obalu", "V jádře atomu", "V neutronu", "V protonovém čísle"],
-    correct: 0,
-    explanation: "Elektrony se pohybují v elektronovém obalu kolem jádra."
-  },
-  {
-    question: "Jaký náboj má proton?",
-    answers: ["Kladný", "Záporný", "Nulový", "Proměnlivý"],
-    correct: 0,
-    explanation: "Proton má kladný náboj."
-  },
-  {
-    question: "Jaký náboj má elektron?",
-    answers: ["Kladný", "Záporný", "Nulový", "Žádný prvek ho nemá"],
-    correct: 1,
-    explanation: "Elektron má záporný náboj."
-  },
-  {
-    question: "Jaký náboj má neutron?",
-    answers: ["Kladný", "Záporný", "Nulový", "Dvojnásobně kladný"],
-    correct: 2,
-    explanation: "Neutron je elektroneutrální částice, má nulový náboj."
-  },
-  {
-    question: "Proč je atom elektroneutrální?",
-    answers: ["Má stejný počet protonů a elektronů", "Nemá žádné protony", "Má více neutronů než elektronů", "Má pouze elektrony"],
-    correct: 0,
-    explanation: "Atom je elektroneutrální, protože počet protonů se rovná počtu elektronů."
-  },
-  {
-    question: "Jak se souhrnně nazývají protony a neutrony?",
-    answers: ["Nukleony", "Elektrony", "Valenční částice", "Izotopy"],
-    correct: 0,
-    explanation: "Protony a neutrony se souhrnně nazývají nukleony."
-  },
-  {
-    question: "Co udává protonové číslo?",
-    answers: ["Počet protonů v jádře", "Počet neutronů v jádře", "Počet vrstev v obalu", "Počet izotopů"],
-    correct: 0,
-    explanation: "Protonové číslo udává počet protonů v jádře atomu."
-  },
-  {
-    question: "Co u neutrálního atomu odpovídá protonovému číslu?",
-    answers: ["Počet elektronů", "Počet neutronů", "Počet period", "Počet sloučenin"],
-    correct: 0,
-    explanation: "U neutrálního atomu se počet protonů rovná počtu elektronů."
-  },
-  {
-    question: "Co udává nukleonové číslo?",
-    answers: ["Počet protonů a neutronů v jádře", "Pouze počet elektronů", "Počet chemických vazeb", "Počet valenčních vrstev"],
-    correct: 0,
-    explanation: "Nukleonové číslo udává počet nukleonů, tedy protonů a neutronů v jádře."
-  },
-  {
-    question: "Jak získáme nukleonové číslo z periodické soustavy?",
-    answers: ["Zaokrouhlením relativní atomové hmotnosti", "Sečtením skupiny a periody", "Odečtením elektronů", "Podle barvy prvku"],
-    correct: 0,
-    explanation: "Nukleonové číslo získáme zaokrouhlením relativní atomové hmotnosti na celé číslo."
-  },
-  {
-    question: "Jak vypočítáme neutronové číslo?",
-    answers: ["N = A - Z", "N = A + Z", "N = Z - A", "N = e- + p+"],
-    correct: 0,
-    explanation: "Neutronové číslo vypočítáme jako rozdíl nukleonového čísla a protonového čísla."
-  },
-  {
-    question: "Jak se správně píše značka chemického prvku?",
-    answers: ["První písmeno velké, druhé malé", "Všechna písmena malá", "Všechna písmena velká", "Pouze číslicí"],
-    correct: 0,
-    explanation: "Značka prvku se píše tak, že první písmeno je velké a druhé případné písmeno malé."
-  },
-  {
-    question: "Který prvek má protonové číslo 3?",
-    answers: ["Lithium", "Beryllium", "Vodík", "Uhlík"],
-    correct: 0,
-    explanation: "Lithium má protonové číslo 3."
-  },
-  {
-    question: "Kolik elektronů může mít maximálně první elektronová vrstva K?",
-    answers: ["2", "8", "18", "32"],
-    correct: 0,
-    explanation: "První vrstva K může obsahovat maximálně 2 elektrony."
-  },
-  {
-    question: "Kolik elektronů může mít maximálně druhá vrstva L?",
-    answers: ["2", "8", "18", "1"],
-    correct: 1,
-    explanation: "Druhá vrstva L může obsahovat maximálně 8 elektronů."
-  },
-  {
-    question: "Co udává číslo periody v periodické soustavě?",
-    answers: ["Počet elektronových vrstev", "Počet neutronů", "Počet protonů vždy v jádře", "Počet izotopů"],
-    correct: 0,
-    explanation: "Číslo periody udává počet vrstev v elektronovém obalu."
-  },
-  {
-    question: "Jak se nazývají elektrony v nejvzdálenější vrstvě od jádra?",
-    answers: ["Valenční elektrony", "Nukleony", "Neutrony", "Protony"],
-    correct: 0,
-    explanation: "Elektrony v nejvzdálenější vrstvě se nazývají valenční elektrony."
-  },
-  {
-    question: "Co jsou izotopy?",
-    answers: ["Atomy téhož prvku lišící se počtem neutronů", "Atomy různých prvků se stejným názvem", "Ionty se záporným nábojem", "Elektrony na valenční vrstvě"],
-    correct: 0,
-    explanation: "Izotopy jsou atomy téhož prvku, které se liší počtem neutronů v jádře."
-  },
-  {
-    question: "Jak se nazývají izotopy vodíku?",
-    answers: ["Protium, deuterium, tritium", "Bronz, mosaz, pájka", "Kation, anion, atom", "Sodík, chlor, argon"],
-    correct: 0,
-    explanation: "Materiál uvádí izotopy vodíku protium, deuterium a tritium."
-  },
-  {
-    question: "Kdo je autorem periodického zákona?",
-    answers: ["Dmitrij Ivanovič Mendělejev", "Joseph Thomson", "John Dalton", "Erwin Schrödinger"],
-    correct: 0,
-    explanation: "Autorem periodického zákona je Dmitrij Ivanovič Mendělejev."
-  },
-  {
-    question: "Ve kterém roce Mendělejev sestavil periodickou tabulku?",
-    answers: ["1869", "1808", "1913", "1932"],
-    correct: 0,
-    explanation: "Mendělejev přišel s periodickou tabulkou v roce 1869."
-  },
-  {
-    question: "Podle čeho Mendělejev původně seřadil prvky?",
-    answers: ["Podle atomových hmotností", "Podle barvy", "Podle skupenství", "Podle velikosti atomu na obrázku"],
-    correct: 0,
-    explanation: "Mendělejev seřadil prvky podle jejich atomových hmotností."
-  },
-  {
-    question: "Co Mendělejev zjistil o vlastnostech prvků?",
-    answers: ["Pravidelně se opakují", "Jsou vždy stejné", "Nemají žádný řád", "Závisí pouze na barvě"],
-    correct: 0,
-    explanation: "Mendělejev zjistil, že vlastnosti prvků se pravidelně neboli periodicky opakují."
-  },
-  {
-    question: "Které prvky Mendělejev předpověděl jako dosud neobjevené?",
-    answers: ["Eka-aluminium, eka-silicium a eka-bor", "Vodík, helium a lithium", "Zlato, stříbro a měď", "Uran, neptunium a plutonium"],
-    correct: 0,
-    explanation: "Mendělejev předpověděl prvky eka-aluminium, eka-silicium a eka-bor."
-  },
-  {
-    question: "Jak se jmenuje radioaktivní uměle připravený prvek pojmenovaný po Mendělejevovi?",
-    answers: ["Mendelevium", "Einsteinium", "Rutherfordium", "Bohrium"],
-    correct: 0,
-    explanation: "Po Mendělejevovi je pojmenován prvek mendelevium."
-  },
-  {
-    question: "Co je ion?",
-    answers: ["Elektricky nabitá částice", "Neutrální částice", "Částice v jádře atomu", "Jiný název pro neutron"],
-    correct: 0,
-    explanation: "Iont je elektricky nabitá částice."
-  },
-  {
-    question: "Jak vzniká kation?",
-    answers: ["Ztrátou elektronů", "Přijetím elektronů", "Přijetím neutronů", "Ztrátou protonů"],
-    correct: 0,
-    explanation: "Kation vzniká ztrátou jednoho nebo více elektronů."
-  },
-  {
-    question: "Jaký náboj má kation?",
-    answers: ["Kladný", "Záporný", "Nulový", "Vždy dvojitě záporný"],
-    correct: 0,
-    explanation: "Kation má kladný náboj, protože má více protonů než elektronů."
-  },
-  {
-    question: "Jak vzniká anion?",
-    answers: ["Přijetím elektronů", "Ztrátou elektronů", "Ztrátou neutronů", "Rozpadem jádra"],
-    correct: 0,
-    explanation: "Anion vzniká přijetím jednoho nebo více elektronů."
-  },
-  {
-    question: "Jaký náboj má anion?",
-    answers: ["Záporný", "Kladný", "Nulový", "Vždy kladný"],
-    correct: 0,
-    explanation: "Anion má záporný náboj, protože má více elektronů než protonů."
-  },
-  {
-    question: "Jak zapíšeme atom kyslíku, který přijal dva elektrony?",
-    answers: ["O2-", "O2+", "O0", "O+"],
-    correct: 0,
-    explanation: "Atom kyslíku, který přijal dva elektrony, se zapíše jako O2-."
-  },
-  {
-    question: "Co se stane s oxidačním číslem, když částice přijímá elektrony?",
-    answers: ["Snižuje se", "Zvyšuje se", "Nemění se", "Vždy se stane nulovým"],
-    correct: 0,
-    explanation: "Když částice přijímá elektrony, její oxidační číslo se snižuje."
-  }
-    ];
-
-    const state = {
-      round: [],
-      current: 0,
-      score: 0,
-      lightnings: 0,
-      answered: false,
-      history: []
-    };
-
-    const $ = (id) => document.getElementById(id);
-
-    const screens = {
-      start: $("startScreen"),
-      game: $("gameScreen"),
-      result: $("resultScreen")
-    };
-
-    function showScreen(name) {
-      Object.values(screens).forEach(screen => screen.classList.remove("active"));
-      screens[name].classList.add("active");
-    }
-
-    function shuffle(array) {
-      return [...array].sort(() => Math.random() - 0.5);
-    }
-
-    function startGame() {
-      const available = questionBank;
-      const count = 10;
-
-      state.round = shuffle(available).slice(0, Math.min(count, available.length));
-      state.current = 0;
-      state.score = 0;
-      state.lightnings = 0;
-      state.answered = false;
-      state.history = [];
-
-      updateHeader();
-      showScreen("game");
-      renderQuestion();
-    }
-
-    function updateHeader() {
-      $("roundNow").textContent = Math.min(state.current + 1, state.round.length || 0);
-      $("lightnings").textContent = state.lightnings;
-      $("scoreLabel").textContent = `Správně: ${state.score}`;
-      const progress = state.round.length ? (state.current / state.round.length) * 100 : 0;
-      $("progressBar").style.width = `${progress}%`;
-    }
-
-    function renderQuestion() {
-      const q = state.round[state.current];
-      state.answered = false;      $("questionText").textContent = q.question;
-      $("feedback").className = "feedback";
-      $("feedback").textContent = "";
-      $("nextBtn").hidden = true;
-      $("answers").innerHTML = "";
-      updateHeader();
-
-      const mappedAnswers = q.answers.map((text, originalIndex) => ({ text, originalIndex }));
-      shuffle(mappedAnswers).forEach((answer, visibleIndex) => {
-        const button = document.createElement("button");
-        button.className = "answer";
-        button.type = "button";
-        button.innerHTML = `<span aria-hidden="true">${String.fromCharCode(65 + visibleIndex)}.</span> ${answer.text}`;
-        button.addEventListener("click", () => chooseAnswer(button, answer.originalIndex));
-        $("answers").appendChild(button);
-      });
-    }
-
-    function chooseAnswer(button, selectedIndex) {
-      if (state.answered) return;
-      state.answered = true;
-
-      const q = state.round[state.current];
-      const isCorrect = selectedIndex === q.correct;
-      const buttons = [...document.querySelectorAll(".answer")];
-
-      buttons.forEach(btn => {
-        btn.disabled = true;
-        const text = btn.textContent.replace(/^[A-D]\.\s*/, "").trim();
-        const originalIndex = q.answers.indexOf(text);
-        if (originalIndex === q.correct) btn.classList.add("correct");
-      });
-
-      if (isCorrect) {
-        state.score += 1;
-        state.lightnings += 1;
-        button.classList.add("correct");
-        $("feedback").innerHTML = `✅ Správně! Získáváš energii.<br><span class="small">${q.explanation}</span>`;
-      } else {
-        button.classList.add("wrong");
-        $("feedback").innerHTML = `❌ To není správně. Správná odpověď: <strong>${q.answers[q.correct]}</strong>.<br><span class="small">${q.explanation}</span>`;
-      }
-
-      state.history.push({
-        question: q.question,
-        selected: q.answers[selectedIndex],
-        correct: q.answers[q.correct],
-        isCorrect
-      });
-
-      $("feedback").classList.add("show");
-      $("nextBtn").hidden = false;
-      updateHeader();
-    }
-
-    function nextQuestion() {
-      state.current += 1;
-      if (state.current >= state.round.length) {
-        showResults();
-      } else {
-        renderQuestion();
-      }
-    }
-
-    function showResults() {
-      $("roundNow").textContent = state.round.length;
-      $("progressBar").style.width = "100%";
-      showScreen("result");
-
-      const total = state.round.length;
-      const percent = Math.round((state.score / total) * 100);
-      $("finalScore").textContent = `${state.score}/${total}`;
-      $("finalLightnings").textContent = state.lightnings;
-
-      let message = "Dobrá práce!";
-      if (percent === 100) message = "Perfektní výsledek! Máš maximum energie.";
-      else if (percent >= 80) message = "Výborně! Většinu otázek máš správně.";
-      else if (percent >= 50) message = "Slušný výkon. Ještě pár pokusů a bude to skvělé.";
-      else message = "Nevadí, zkus další kolo a nasbírej více energie.";
-
-      $("resultMessage").textContent = message;
-      renderReview();
-    }
-
-    function renderReview() {
-      const review = $("review");
-      review.innerHTML = "";
-      state.history.forEach((item, index) => {
-        const div = document.createElement("div");
-        div.className = `review-item ${item.isCorrect ? "good" : "bad"}`;
-        div.innerHTML = `
-          <strong>${index + 1}. ${item.question}</strong>
-          <div class="small">Tvoje odpověď: ${item.selected}</div>
-          <div class="small">Správně: ${item.correct}</div>
-        `;
-        review.appendChild(div);
-      });
-    }
-
-    $("startBtn").addEventListener("click", startGame);
-    $("nextBtn").addEventListener("click", nextQuestion);
-    $("restartBtn").addEventListener("click", () => {
-      $("review").hidden = true;
-      $("showReviewBtn").textContent = "Zobrazit přehled";
-      showScreen("start");
-      $("roundNow").textContent = "0";
-      $("lightnings").textContent = "0";
-    });
-    $("showReviewBtn").addEventListener("click", () => {
-      const review = $("review");
-      review.hidden = !review.hidden;
-      $("showReviewBtn").textContent = review.hidden ? "Zobrazit přehled" : "Skrýt přehled";
     });
   </script>
 </body>
